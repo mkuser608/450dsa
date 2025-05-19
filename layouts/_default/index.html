@@ -19,8 +19,8 @@
     {{ if eq $topic "Binary Trees" }}{{ $slug = "binary-trees" }}{{ end }}
     {{ if eq $topic "Dynamic Programming" }}{{ $slug = "dynamic-programming" }}{{ end }}
     {{ if eq $topic "Bit Manipulation" }}{{ $slug = "bit-manipulation" }}{{ end }}
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-topic-slug="{{ $slug }}">
-      <div class="bg-primary-600 p-4">
+    <div class="card hover:shadow-lg transition-shadow duration-300" data-topic-slug="{{ $slug }}">
+      <div class="card-header">
         <h2 class="text-xl font-semibold text-white">{{ $topic }}</h2>
       </div>
       <div class="p-6">
@@ -28,11 +28,11 @@
           <span class="text-gray-700 dark:text-gray-300">Progress</span>
           <span class="text-primary-600 dark:text-primary-400 font-medium" id="progress-{{ $slug }}">0%</span>
         </div>
-        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-          <div class="bg-primary-600 h-2.5 rounded-full" id="progress-bar-{{ $slug }}" style="width: 0%"></div>
+        <div class="progress-bar mb-6">
+          <div class="progress-bar-fill" id="progress-bar-{{ $slug }}" style="width: 0%"></div>
         </div>
         <div class="mt-6">
-          <a href="/{{ $slug }}/" class="inline-block w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded text-center transition duration-300">
+          <a href="/{{ $slug }}/" class="btn btn-primary w-full text-center">
             Start Practice
           </a>
         </div>
