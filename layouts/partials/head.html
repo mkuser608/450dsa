@@ -1,41 +1,71 @@
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker</title>
-  <meta
-    name="description"
-    content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}"
-  />
-
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}">
+  
   <!-- SEO Meta Tags -->
-  <meta
-    property="og:title"
-    content="{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker"
-  />
-  <meta
-    property="og:description"
-    content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}"
-  />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ .Permalink }}" />
-  <meta name="twitter:card" content="summary_large_image" />
-
+  <meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker">
+  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta name="twitter:card" content="summary_large_image">
+  
   <!-- Canonical URL -->
-  <link rel="canonical" href="{{ .Permalink }}" />
-
+  <link rel="canonical" href="{{ .Permalink }}">
+  
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
-
-  <!-- CSS -->
-  {{ $css := resources.Get "css/main.css" }} {{ if hugo.IsProduction }} {{ $css
-  = $css | minify | fingerprint }} {{ end }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
-
+  <link rel="icon" href="/favicon.ico">
+  
+  <!-- Tailwind CSS -->
+  <style>
+    /* Base Tailwind styles */
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    
+    /* Custom variables */
+    :root {
+      --primary-50: #eff6ff;
+      --primary-100: #dbeafe;
+      --primary-200: #bfdbfe;
+      --primary-300: #93c5fd;
+      --primary-400: #60a5fa;
+      --primary-500: #3b82f6;
+      --primary-600: #2563eb;
+      --primary-700: #1d4ed8;
+      --primary-800: #1e40af;
+      --primary-900: #1e3a8a;
+      --primary-950: #172554;
+    }
+    
+    /* Custom components */
+    .btn {
+      @apply px-4 py-2 rounded font-medium transition duration-300;
+    }
+    
+    .btn-primary {
+      @apply bg-primary-600 text-white hover:bg-primary-700;
+    }
+    
+    .card {
+      @apply bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden;
+    }
+    
+    .card-header {
+      @apply bg-primary-600 p-4;
+    }
+    
+    .card-body {
+      @apply p-6;
+    }
+  </style>
+  
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Inline Tailwind CSS for Cloudflare compatibility -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
