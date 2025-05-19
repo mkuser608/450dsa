@@ -1,46 +1,186 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-8">
-  <h1 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">450 DSA Cracker</h1>
-  
-  <div class="max-w-3xl mx-auto mb-8 text-center">
-    <p class="text-lg text-gray-700 dark:text-gray-300">
-      A comprehensive collection of 450 DSA problems to help you ace your coding interviews.
-      Track your progress, practice systematically, and build your confidence.
-    </p>
-  </div>
-  
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {{ range $index, $topic := slice "Array" "Matrix" "String" "Searching & Sorting" "Linked List" "Binary Trees" "Binary Search Trees" "Greedy" "Backtracking" "Stacks & Queues" "Heap" "Graph" "Trie" "Dynamic Programming" "Bit Manipulation" }}
-    {{ $slug := $topic | lower | replaceRE "[^a-z0-9]+" "-" }}
-    {{ if eq $topic "Binary Search Trees" }}{{ $slug = "bst" }}{{ end }}
-    {{ if eq $topic "Searching & Sorting" }}{{ $slug = "searching-sorting" }}{{ end }}
-    {{ if eq $topic "Stacks & Queues" }}{{ $slug = "stacks-queues" }}{{ end }}
-    {{ if eq $topic "Linked List" }}{{ $slug = "linked-list" }}{{ end }}
-    {{ if eq $topic "Binary Trees" }}{{ $slug = "binary-trees" }}{{ end }}
-    {{ if eq $topic "Dynamic Programming" }}{{ $slug = "dynamic-programming" }}{{ end }}
-    {{ if eq $topic "Bit Manipulation" }}{{ $slug = "bit-manipulation" }}{{ end }}
-    <div class="card hover:shadow-lg transition-shadow duration-300" data-topic-slug="{{ $slug }}">
-      <div class="card-header">
-        <h2 class="text-xl font-semibold text-white">{{ $topic }}</h2>
-      </div>
-      <div class="p-6">
-        <div class="flex justify-between items-center mb-4">
-          <span class="text-gray-700 dark:text-gray-300">Progress</span>
-          <span class="text-primary-600 dark:text-primary-400 font-medium" id="progress-{{ $slug }}">0%</span>
-        </div>
-        <div class="progress-bar mb-6">
-          <div class="progress-bar-fill" id="progress-bar-{{ $slug }}" style="width: 0%"></div>
-        </div>
-        <div class="mt-6">
-          <a href="/{{ $slug }}/" class="btn btn-primary w-full text-center">
-            Start Practice
+<main class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300">
+  <!-- Hero Section -->
+  <section class="pt-16 pb-12 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">450 DSA Cracker</h1>
+        <p class="text-xl md:text-2xl text-primary-100 mb-8">Master your coding interviews with systematic practice</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#topics"
+            class="btn bg-white text-primary-800 hover:bg-primary-50 font-medium px-6 py-3 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
+            Start Practicing
+          </a>
+          <a href="/about/"
+            class="btn bg-transparent border-2 border-white text-white hover:bg-white/10 font-medium px-6 py-3 rounded-lg transition duration-300">
+            Learn More
           </a>
         </div>
       </div>
     </div>
-    {{ end }}
-  </div>
-</div>
+  </section>
+
+  <!-- Stats Section with improved styling -->
+  <section class="py-10 bg-white dark:bg-gray-800 shadow-md">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <div
+          class="text-center py-4 px-8 bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-100 dark:border-gray-600 shadow-sm">
+          <h3 class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400" id="total-problems">450</h3>
+          <p class="text-gray-600 dark:text-gray-300 font-medium">DSA Problems</p>
+        </div>
+        <div
+          class="text-center py-4 px-8 bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-100 dark:border-gray-600 shadow-sm">
+          <h3 class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400" id="total-topics">15</h3>
+          <p class="text-gray-600 dark:text-gray-300 font-medium">Topics Covered</p>
+        </div>
+        <div
+          class="text-center py-4 px-8 bg-gray-50 dark:bg-gray-700 rounded-xl border border-gray-100 dark:border-gray-600 shadow-sm">
+          <h3 class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400" id="completion-percentage">
+            0%</h3>
+          <p class="text-gray-600 dark:text-gray-300 font-medium">Your Progress</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Topics Grid Section with improved styling -->
+  <section id="topics" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <span
+          class="inline-block px-3 py-1 text-xs font-semibold text-primary-800 dark:text-primary-300 bg-primary-100 dark:bg-primary-900 rounded-full mb-3">MASTER
+          DSA</span>
+        <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-4">Practice Topics</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 text-center max-w-3xl mx-auto">
+          Track your progress across these fundamental data structures and algorithms topics to build confidence for
+          technical interviews.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ range $index, $topic := slice "Array" "Matrix" "String" "Searching & Sorting" "Linked List" "Binary Trees"
+        "Binary Search Trees" "Greedy" "Backtracking" "Stacks & Queues" "Heap" "Graph" "Trie" "Dynamic Programming"
+        "Bit Manipulation" }}
+        {{ $slug := $topic | lower | replaceRE "[^a-z0-9]+" "-" }}
+        {{ if eq $topic "Binary Search Trees" }}{{ $slug = "bst" }}{{ end }}
+        {{ if eq $topic "Searching & Sorting" }}{{ $slug = "searching-sorting" }}{{ end }}
+        {{ if eq $topic "Stacks & Queues" }}{{ $slug = "stacks-queues" }}{{ end }}
+        {{ if eq $topic "Linked List" }}{{ $slug = "linked-list" }}{{ end }}
+        {{ if eq $topic "Binary Trees" }}{{ $slug = "binary-trees" }}{{ end }}
+        {{ if eq $topic "Dynamic Programming" }}{{ $slug = "dynamic-programming" }}{{ end }}
+        {{ if eq $topic "Bit Manipulation" }}{{ $slug = "bit-manipulation" }}{{ end }}
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 dark:border-gray-700 relative group"
+          data-topic-slug="{{ $slug }}">
+          <div class="absolute top-0 right-0 m-4 z-10">
+            <span
+              class="inline-flex items-center justify-center px-3 py-1 text-xs font-bold leading-none rounded-full bg-primary-100 text-primary-800 dark:bg-primary-900 dark:text-primary-200 shadow-sm"
+              id="count-completed-{{ $slug }}">0/0</span>
+          </div>
+          <div class="h-1.5 bg-primary-600 w-full transition-all duration-500" id="top-progress-bar-{{ $slug }}"></div>
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-400 mr-3 shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                    clip-rule="evenodd" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-gray-800 dark:text-white">{{ $topic }}</h3>
+            </div>
+
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-sm text-gray-600 dark:text-gray-400">Progress</span>
+              <span class="text-sm font-medium text-primary-600 dark:text-primary-400"
+                id="progress-{{ $slug }}">0%</span>
+            </div>
+            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mb-6">
+              <div class="bg-primary-600 h-2.5 rounded-full transition-all duration-500" id="progress-bar-{{ $slug }}"
+                style="width: 0%"></div>
+            </div>
+
+            <a href="/{{ $slug }}/"
+              class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center font-medium py-3 px-4 rounded-lg transition duration-300 shadow-sm group-hover:shadow-md">
+              Practice Now
+            </a>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <!-- Feature Section with improved styling -->
+  <section class="py-16 bg-gray-100 dark:bg-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <span
+          class="inline-block px-3 py-1 text-xs font-semibold text-primary-800 dark:text-primary-300 bg-primary-100 dark:bg-primary-900 rounded-full mb-3">WHY
+          CHOOSE US</span>
+        <h2 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-4">Features</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-600 hover:shadow-lg transition-shadow duration-300">
+          <div
+            class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Curated Problems</h3>
+          <p class="text-gray-600 dark:text-gray-300">Handpicked collection of 450 DSA problems that cover all important
+            concepts asked in interviews.</p>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-600 hover:shadow-lg transition-shadow duration-300">
+          <div
+            class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Progress Tracking</h3>
+          <p class="text-gray-600 dark:text-gray-300">Track your progress across topics with a visual dashboard and stay
+            motivated with achievement stats.</p>
+        </div>
+
+        <div
+          class="bg-white dark:bg-gray-700 p-8 rounded-xl shadow-md border border-gray-100 dark:border-gray-600 hover:shadow-lg transition-shadow duration-300">
+          <div
+            class="w-14 h-14 rounded-xl bg-primary-100 dark:bg-primary-900 flex items-center justify-center text-primary-600 dark:text-primary-400 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-3">Bookmarks & Notes</h3>
+          <p class="text-gray-600 dark:text-gray-300">Save important problems for later review and add personal notes to
+            track your learning journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-primary-700 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-6">Ready to crack your next coding interview?</h2>
+      <p class="text-xl text-primary-100 max-w-2xl mx-auto mb-8">Start practicing systematically today and build your
+        confidence for technical interviews.</p>
+      <a href="#topics"
+        class="inline-block bg-white text-primary-700 hover:bg-primary-50 font-bold px-8 py-3 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
+        Start Now
+      </a>
+    </div>
+  </section>
+</main>
 
 <!-- Topic problem counts -->
 <script type="application/json" id="topic-problem-counts">
@@ -64,97 +204,152 @@
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Get problem counts from embedded JSON
-  let topicProblemCounts = {};
-  try {
-    const problemCountsJson = document.getElementById('topic-problem-counts').textContent;
-    topicProblemCounts = JSON.parse(problemCountsJson);
-  } catch (error) {
-    console.error('Error parsing problem counts:', error);
-    // Fallback counts if JSON parsing fails
-    topicProblemCounts = {
-      'array': 36,
-      'matrix': 10,
-      'string': 43,
-      'searching-sorting': 36,
-      'linked-list': 36,
-      'binary-trees': 35,
-      'bst': 22,
-      'greedy': 35,
-      'backtracking': 19,
-      'stacks-queues': 38,
-      'heap': 18,
-      'graph': 44,
-      'trie': 6,
-      'dynamic-programming': 60,
-      'bit-manipulation': 10
-    };
-  }
-  
-  // Define topic slugs
-  const topicSlugs = {
-    'array': 'Array',
-    'matrix': 'Matrix',
-    'string': 'String',
-    'searching-sorting': 'Searching & Sorting',
-    'linked-list': 'Linked List',
-    'binary-trees': 'Binary Trees',
-    'bst': 'Binary Search Trees',
-    'greedy': 'Greedy',
-    'backtracking': 'Backtracking',
-    'stacks-queues': 'Stacks & Queues',
-    'heap': 'Heap',
-    'graph': 'Graph',
-    'trie': 'Trie',
-    'dynamic-programming': 'Dynamic Programming',
-    'bit-manipulation': 'Bit Manipulation'
-  };
-  
-  // Update progress for each topic
-  Object.keys(topicSlugs).forEach(slug => {
-    // Get the total number of problems for this topic
-    const totalProblems = topicProblemCounts[slug] || 30;
-    
-    // Store the total problems count in localStorage
-    localStorage.setItem(`${slug}-total-problems`, totalProblems.toString());
-    
-    // Get or initialize progress data
-    let progressData = [];
+  document.addEventListener('DOMContentLoaded', function () {
+    // Get problem counts from embedded JSON
+    let topicProblemCounts = {};
     try {
-      const savedData = localStorage.getItem(`topic-${slug}`);
-      if (savedData) {
-        progressData = JSON.parse(savedData);
-      } else {
-        // Initialize with default data
-        progressData = Array(totalProblems).fill().map((_, index) => ({
-          id: index,
-          done: false,
-          bookmark: false,
-          notes: ''
-        }));
-        // Save to localStorage
-        localStorage.setItem(`topic-${slug}`, JSON.stringify(progressData));
-      }
+      const problemCountsJson = document.getElementById('topic-problem-counts').textContent;
+      topicProblemCounts = JSON.parse(problemCountsJson);
     } catch (error) {
-      console.error(`Error loading saved data for ${slug}:`, error);
-      progressData = [];
+      console.error('Error parsing problem counts:', error);
+      // Fallback counts if JSON parsing fails
+      topicProblemCounts = {
+        'array': 36,
+        'matrix': 10,
+        'string': 43,
+        'searching-sorting': 36,
+        'linked-list': 36,
+        'binary-trees': 35,
+        'bst': 22,
+        'greedy': 35,
+        'backtracking': 19,
+        'stacks-queues': 38,
+        'heap': 18,
+        'graph': 44,
+        'trie': 6,
+        'dynamic-programming': 60,
+        'bit-manipulation': 10
+      };
     }
-    
-    // Count completed problems
-    const completedCount = progressData.filter(problem => problem.done).length;
-    
-    // Update UI
-    const progressElement = document.getElementById(`progress-${slug}`);
-    const progressBarElement = document.getElementById(`progress-bar-${slug}`);
-    
-    if (progressElement && progressBarElement) {
-      const percentage = Math.round((completedCount / totalProblems) * 100);
-      
-      progressElement.textContent = `${percentage}%`;
-      progressBarElement.style.width = `${percentage}%`;
+
+    // Calculate total problems
+    const totalProblems = Object.values(topicProblemCounts).reduce((a, b) => a + b, 0);
+    document.getElementById('total-problems').textContent = totalProblems;
+    document.getElementById('total-topics').textContent = Object.keys(topicProblemCounts).length;
+
+    // Define topic slugs
+    const topicSlugs = {
+      'array': 'Array',
+      'matrix': 'Matrix',
+      'string': 'String',
+      'searching-sorting': 'Searching & Sorting',
+      'linked-list': 'Linked List',
+      'binary-trees': 'Binary Trees',
+      'bst': 'Binary Search Trees',
+      'greedy': 'Greedy',
+      'backtracking': 'Backtracking',
+      'stacks-queues': 'Stacks & Queues',
+      'heap': 'Heap',
+      'graph': 'Graph',
+      'trie': 'Trie',
+      'dynamic-programming': 'Dynamic Programming',
+      'bit-manipulation': 'Bit Manipulation'
+    };
+
+    // Track total completed problems
+    let totalCompletedProblems = 0;
+
+    // Update progress for each topic
+    Object.keys(topicSlugs).forEach(slug => {
+      // Get the total number of problems for this topic
+      const totalProblems = topicProblemCounts[slug] || 30;
+
+      // Store the total problems count in localStorage
+      localStorage.setItem(`${slug}-total-problems`, totalProblems.toString());
+
+      // Get or initialize progress data
+      let progressData = [];
+      try {
+        const savedData = localStorage.getItem(`topic-${slug}`);
+        if (savedData) {
+          progressData = JSON.parse(savedData);
+        } else {
+          // Initialize with default data
+          progressData = Array(totalProblems).fill().map((_, index) => ({
+            id: index,
+            done: false,
+            bookmark: false,
+            notes: ''
+          }));
+          // Save to localStorage
+          localStorage.setItem(`topic-${slug}`, JSON.stringify(progressData));
+        }
+      } catch (error) {
+        console.error(`Error loading saved data for ${slug}:`, error);
+        progressData = [];
+      }
+
+      // Count completed problems
+      const completedCount = progressData.filter(problem => problem.done).length;
+      totalCompletedProblems += completedCount;
+
+      // Update UI
+      const progressElement = document.getElementById(`progress-${slug}`);
+      const progressBarElement = document.getElementById(`progress-bar-${slug}`);
+      const topProgressBarElement = document.getElementById(`top-progress-bar-${slug}`);
+      const countCompletedElement = document.getElementById(`count-completed-${slug}`);
+
+      if (progressElement && progressBarElement && topProgressBarElement && countCompletedElement) {
+        const percentage = Math.round((completedCount / totalProblems) * 100);
+
+        progressElement.textContent = `${percentage}%`;
+        progressBarElement.style.width = `${percentage}%`;
+        topProgressBarElement.style.width = `${percentage}%`;
+        countCompletedElement.textContent = `${completedCount}/${totalProblems}`;
+
+        // Apply color based on progress
+        if (percentage === 100) {
+          topProgressBarElement.classList.remove('bg-primary-600');
+          topProgressBarElement.classList.add('bg-green-500');
+        } else if (percentage >= 75) {
+          topProgressBarElement.classList.remove('bg-primary-600');
+          topProgressBarElement.classList.add('bg-blue-500');
+        } else if (percentage >= 50) {
+          topProgressBarElement.classList.remove('bg-primary-600');
+          topProgressBarElement.classList.add('bg-yellow-500');
+        } else if (percentage >= 25) {
+          topProgressBarElement.classList.remove('bg-primary-600');
+          topProgressBarElement.classList.add('bg-orange-500');
+        }
+      }
+    });
+
+    // Update overall completion percentage
+    const overallPercentage = Math.round((totalCompletedProblems / totalProblems) * 100);
+    document.getElementById('completion-percentage').textContent = `${overallPercentage}%`;
+
+    // Dark mode toggle functionality
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+      darkModeToggle.addEventListener('click', function () {
+        document.documentElement.classList.toggle('dark');
+
+        // Save preference to localStorage
+        if (document.documentElement.classList.contains('dark')) {
+          localStorage.setItem('color-theme', 'dark');
+        } else {
+          localStorage.setItem('color-theme', 'light');
+        }
+      });
+
+      // Check for saved theme preference or OS preference
+      if (localStorage.getItem('color-theme') === 'dark' ||
+        (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     }
   });
-});
 </script>
 {{ end }}
