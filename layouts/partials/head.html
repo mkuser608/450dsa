@@ -4,7 +4,7 @@
   <title>{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker</title>
   <meta
     name="description"
-    content="{{ with .Description }}{{ . }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}"
+    content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}"
   />
 
   <!-- SEO Meta Tags -->
@@ -14,7 +14,7 @@
   />
   <meta
     property="og:description"
-    content="{{ with .Description }}{{ . }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}"
+    content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}"
   />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ .Permalink }}" />
@@ -27,15 +27,9 @@
   <link rel="icon" href="/favicon.ico" />
 
   <!-- CSS -->
-  {{ $css := resources.Get "css/main.css" | css.PostCSS (dict "targetPath"
-  "main.css") }} {{ if hugo.IsProduction }} {{ $css = $css | minify |
-  fingerprint | resources.PostProcess }} {{ end }}
-  <link
-    rel="stylesheet"
-    href="{{ $css.RelPermalink }}"
-    integrity="{{ with $css.Data.Integrity }}{{ . }}{{ end }}"
-    crossorigin="anonymous"
-  />
+  {{ $css := resources.Get "css/main.css" }} {{ if hugo.IsProduction }} {{ $css
+  = $css | minify | fingerprint }} {{ end }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -19,7 +19,7 @@
     {{ if eq $topic "Binary Trees" }}{{ $slug = "binary-trees" }}{{ end }}
     {{ if eq $topic "Dynamic Programming" }}{{ $slug = "dynamic-programming" }}{{ end }}
     {{ if eq $topic "Bit Manipulation" }}{{ $slug = "bit-manipulation" }}{{ end }}
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" data-topic-slug="{{ $slug }}">
       <div class="bg-primary-600 p-4">
         <h2 class="text-xl font-semibold text-white">{{ $topic }}</h2>
       </div>
@@ -42,8 +42,56 @@
   </div>
 </div>
 
+<!-- Topic problem counts -->
+<script type="application/json" id="topic-problem-counts">
+{
+  "array": 36,
+  "matrix": 10,
+  "string": 43,
+  "searching-sorting": 36,
+  "linked-list": 36,
+  "binary-trees": 35,
+  "bst": 22,
+  "greedy": 35,
+  "backtracking": 19,
+  "stacks-queues": 38,
+  "heap": 18,
+  "graph": 44,
+  "trie": 6,
+  "dynamic-programming": 60,
+  "bit-manipulation": 10
+}
+</script>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // Get problem counts from embedded JSON
+  let topicProblemCounts = {};
+  try {
+    const problemCountsJson = document.getElementById('topic-problem-counts').textContent;
+    topicProblemCounts = JSON.parse(problemCountsJson);
+  } catch (error) {
+    console.error('Error parsing problem counts:', error);
+    // Fallback counts if JSON parsing fails
+    topicProblemCounts = {
+      'array': 36,
+      'matrix': 10,
+      'string': 43,
+      'searching-sorting': 36,
+      'linked-list': 36,
+      'binary-trees': 35,
+      'bst': 22,
+      'greedy': 35,
+      'backtracking': 19,
+      'stacks-queues': 38,
+      'heap': 18,
+      'graph': 44,
+      'trie': 6,
+      'dynamic-programming': 60,
+      'bit-manipulation': 10
+    };
+  }
+  
   // Define topic slugs
   const topicSlugs = {
     'array': 'Array',
@@ -65,14 +113,43 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Update progress for each topic
   Object.keys(topicSlugs).forEach(slug => {
-    const progressData = JSON.parse(localStorage.getItem(`topic-${slug}`) || '[]');
+    // Get the total number of problems for this topic
+    const totalProblems = topicProblemCounts[slug] || 30;
+    
+    // Store the total problems count in localStorage
+    localStorage.setItem(`${slug}-total-problems`, totalProblems.toString());
+    
+    // Get or initialize progress data
+    let progressData = [];
+    try {
+      const savedData = localStorage.getItem(`topic-${slug}`);
+      if (savedData) {
+        progressData = JSON.parse(savedData);
+      } else {
+        // Initialize with default data
+        progressData = Array(totalProblems).fill().map((_, index) => ({
+          id: index,
+          done: false,
+          bookmark: false,
+          notes: ''
+        }));
+        // Save to localStorage
+        localStorage.setItem(`topic-${slug}`, JSON.stringify(progressData));
+      }
+    } catch (error) {
+      console.error(`Error loading saved data for ${slug}:`, error);
+      progressData = [];
+    }
+    
+    // Count completed problems
+    const completedCount = progressData.filter(problem => problem.done).length;
+    
+    // Update UI
     const progressElement = document.getElementById(`progress-${slug}`);
     const progressBarElement = document.getElementById(`progress-bar-${slug}`);
     
     if (progressElement && progressBarElement) {
-      // Get total problems count from localStorage or default to 30
-      const totalProblems = parseInt(localStorage.getItem(`${slug}-total-problems`) || '30');
-      const percentage = Math.round((progressData.length / totalProblems) * 100);
+      const percentage = Math.round((completedCount / totalProblems) * 100);
       
       progressElement.textContent = `${percentage}%`;
       progressBarElement.style.width = `${percentage}%`;
