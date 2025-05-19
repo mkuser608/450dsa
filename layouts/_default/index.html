@@ -1,0 +1,83 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">450 DSA Cracker</h1>
+  
+  <div class="max-w-3xl mx-auto mb-8 text-center">
+    <p class="text-lg text-gray-700 dark:text-gray-300">
+      A comprehensive collection of 450 DSA problems to help you ace your coding interviews.
+      Track your progress, practice systematically, and build your confidence.
+    </p>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {{ range $index, $topic := slice "Array" "Matrix" "String" "Searching & Sorting" "Linked List" "Binary Trees" "Binary Search Trees" "Greedy" "Backtracking" "Stacks & Queues" "Heap" "Graph" "Trie" "Dynamic Programming" "Bit Manipulation" }}
+    {{ $slug := $topic | lower | replaceRE "[^a-z0-9]+" "-" }}
+    {{ if eq $topic "Binary Search Trees" }}{{ $slug = "bst" }}{{ end }}
+    {{ if eq $topic "Searching & Sorting" }}{{ $slug = "searching-sorting" }}{{ end }}
+    {{ if eq $topic "Stacks & Queues" }}{{ $slug = "stacks-queues" }}{{ end }}
+    {{ if eq $topic "Linked List" }}{{ $slug = "linked-list" }}{{ end }}
+    {{ if eq $topic "Binary Trees" }}{{ $slug = "binary-trees" }}{{ end }}
+    {{ if eq $topic "Dynamic Programming" }}{{ $slug = "dynamic-programming" }}{{ end }}
+    {{ if eq $topic "Bit Manipulation" }}{{ $slug = "bit-manipulation" }}{{ end }}
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+      <div class="bg-primary-600 p-4">
+        <h2 class="text-xl font-semibold text-white">{{ $topic }}</h2>
+      </div>
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-gray-700 dark:text-gray-300">Progress</span>
+          <span class="text-primary-600 dark:text-primary-400 font-medium" id="progress-{{ $slug }}">0%</span>
+        </div>
+        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+          <div class="bg-primary-600 h-2.5 rounded-full" id="progress-bar-{{ $slug }}" style="width: 0%"></div>
+        </div>
+        <div class="mt-6">
+          <a href="/{{ $slug }}/" class="inline-block w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded text-center transition duration-300">
+            Start Practice
+          </a>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Define topic slugs
+  const topicSlugs = {
+    'array': 'Array',
+    'matrix': 'Matrix',
+    'string': 'String',
+    'searching-sorting': 'Searching & Sorting',
+    'linked-list': 'Linked List',
+    'binary-trees': 'Binary Trees',
+    'bst': 'Binary Search Trees',
+    'greedy': 'Greedy',
+    'backtracking': 'Backtracking',
+    'stacks-queues': 'Stacks & Queues',
+    'heap': 'Heap',
+    'graph': 'Graph',
+    'trie': 'Trie',
+    'dynamic-programming': 'Dynamic Programming',
+    'bit-manipulation': 'Bit Manipulation'
+  };
+  
+  // Update progress for each topic
+  Object.keys(topicSlugs).forEach(slug => {
+    const progressData = JSON.parse(localStorage.getItem(`topic-${slug}`) || '[]');
+    const progressElement = document.getElementById(`progress-${slug}`);
+    const progressBarElement = document.getElementById(`progress-bar-${slug}`);
+    
+    if (progressElement && progressBarElement) {
+      // Get total problems count from localStorage or default to 30
+      const totalProblems = parseInt(localStorage.getItem(`${slug}-total-problems`) || '30');
+      const percentage = Math.round((progressData.length / totalProblems) * 100);
+      
+      progressElement.textContent = `${percentage}%`;
+      progressBarElement.style.width = `${percentage}%`;
+    }
+  });
+});
+</script>
+{{ end }}

@@ -1,0 +1,324 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex items-center mb-6">
+      <a href="/" class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 mr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+        </svg>
+      </a>
+      <h1 class="text-3xl font-bold text-gray-800 dark:text-white">{{ .Title }}</h1>
+    </div>
+    
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-gray-700 dark:text-gray-300">Progress</span>
+        <span class="text-primary-600 dark:text-primary-400 font-medium" id="progress-percentage">0%</span>
+      </div>
+      <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 mb-6">
+        <div class="bg-primary-600 h-2.5 rounded-full" id="progress-bar" style="width: 0%"></div>
+      </div>
+      
+      <div class="flex justify-between items-center">
+        <div>
+          <span class="text-gray-700 dark:text-gray-300">Total Problems:</span>
+          <span class="ml-2 font-medium" id="total-problems">{{ if .Params.problems }}{{ len .Params.problems }}{{ else }}0{{ end }}</span>
+        </div>
+        <div>
+          <span class="text-gray-700 dark:text-gray-300">Completed:</span>
+          <span class="ml-2 font-medium" id="completed-problems">0</span>
+        </div>
+        <div>
+          <button id="pick-random" class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded text-center transition duration-300">
+            Pick Random
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mb-6">
+      <div class="relative">
+        <input type="text" id="search-input" placeholder="Search problems or notes..." class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800 dark:text-white">
+        <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    {{ if .Params.problems }}
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <thead class="bg-gray-50 dark:bg-gray-900">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Status</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Problem</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Bookmark</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Notes</th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700" id="problems-table">
+            {{ range $index, $problem := .Params.problems }}
+            <tr data-index="{{ $index }}" data-title="{{ $problem.title }}">
+              <td class="px-6 py-4 whitespace-nowrap">
+                <div class="flex items-center">
+                  <input type="checkbox" class="problem-checkbox h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded" data-problem-id="{{ $index }}">
+                </div>
+              </td>
+              <td class="px-6 py-4">
+                <div class="text-sm font-medium text-gray-900 dark:text-white">{{ $problem.title }}</div>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <button class="bookmark-button text-gray-400 hover:text-yellow-500 focus:outline-none" data-problem-id="{{ $index }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                  </svg>
+                </button>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                <button class="notes-button text-gray-400 hover:text-primary-500 focus:outline-none" data-problem-id="{{ $index }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                    <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm">
+                <div class="flex space-x-2">
+                  <a href="{{ $problem.url }}" target="_blank" class="text-primary-600 hover:text-primary-900 dark:text-primary-400 dark:hover:text-primary-300">GFG</a>
+                  {{ if $problem.url2 }}
+                  <a href="{{ $problem.url2 }}" target="_blank" class="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">CN</a>
+                  {{ end }}
+                </div>
+              </td>
+            </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {{ else }}
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+      <p class="text-gray-700 dark:text-gray-300">No problems found for this topic.</p>
+    </div>
+    {{ end }}
+  </div>
+</div>
+
+<!-- Notes Modal -->
+<div id="notes-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-lg w-full mx-4">
+    <div class="p-4 border-b border-gray-200 dark:border-gray-700">
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white" id="notes-modal-title">Problem Notes</h3>
+    </div>
+    <div class="p-4">
+      <textarea id="notes-content" class="w-full h-40 px-3 py-2 text-gray-700 dark:text-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700"></textarea>
+    </div>
+    <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex justify-end space-x-3">
+      <button id="notes-cancel" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded">Cancel</button>
+      <button id="notes-save" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the current topic slug from the URL
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const topicSlug = pathParts[0];
+  
+  // Initialize problem data storage
+  let problemsData = [];
+  const totalProblems = parseInt(document.getElementById('total-problems').textContent);
+  
+  // Load saved data from localStorage
+  function loadSavedData() {
+    // Create a key for this topic
+    const storageKey = `topic-${topicSlug}`;
+    
+    // Try to load existing data
+    try {
+      const savedData = localStorage.getItem(storageKey);
+      if (savedData) {
+        problemsData = JSON.parse(savedData);
+      } else {
+        // Initialize with default data
+        problemsData = Array(totalProblems).fill().map((_, index) => ({
+          id: index,
+          done: false,
+          bookmark: false,
+          notes: ''
+        }));
+        // Save to localStorage
+        localStorage.setItem(storageKey, JSON.stringify(problemsData));
+      }
+      
+      // Store the total problems count
+      localStorage.setItem(`${topicSlug}-total-problems`, totalProblems.toString());
+      
+      // Update UI based on loaded data
+      updateUI();
+    } catch (error) {
+      console.error('Error loading saved data:', error);
+      // Initialize with empty data on error
+      problemsData = Array(totalProblems).fill().map((_, index) => ({
+        id: index,
+        done: false,
+        bookmark: false,
+        notes: ''
+      }));
+    }
+  }
+  
+  // Update UI based on current data
+  function updateUI() {
+    // Count completed problems
+    const completedCount = problemsData.filter(problem => problem.done).length;
+    
+    // Update progress indicators
+    const percentage = Math.round((completedCount / totalProblems) * 100);
+    document.getElementById('progress-percentage').textContent = `${percentage}%`;
+    document.getElementById('progress-bar').style.width = `${percentage}%`;
+    document.getElementById('completed-problems').textContent = completedCount;
+    
+    // Update checkboxes and bookmarks
+    problemsData.forEach(problem => {
+      const checkbox = document.querySelector(`.problem-checkbox[data-problem-id="${problem.id}"]`);
+      if (checkbox) {
+        checkbox.checked = problem.done;
+      }
+      
+      const bookmarkButton = document.querySelector(`.bookmark-button[data-problem-id="${problem.id}"]`);
+      if (bookmarkButton) {
+        if (problem.bookmark) {
+          bookmarkButton.classList.add('text-yellow-500');
+          bookmarkButton.classList.remove('text-gray-400');
+        } else {
+          bookmarkButton.classList.add('text-gray-400');
+          bookmarkButton.classList.remove('text-yellow-500');
+        }
+      }
+    });
+  }
+  
+  // Save data to localStorage
+  function saveData() {
+    const storageKey = `topic-${topicSlug}`;
+    localStorage.setItem(storageKey, JSON.stringify(problemsData));
+    updateUI();
+  }
+  
+  // Handle checkbox changes
+  document.querySelectorAll('.problem-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const problemId = parseInt(this.dataset.problemId);
+      const problem = problemsData.find(p => p.id === problemId);
+      
+      if (problem) {
+        problem.done = this.checked;
+        saveData();
+      }
+    });
+  });
+  
+  // Handle bookmark clicks
+  document.querySelectorAll('.bookmark-button').forEach(button => {
+    button.addEventListener('click', function() {
+      const problemId = parseInt(this.dataset.problemId);
+      const problem = problemsData.find(p => p.id === problemId);
+      
+      if (problem) {
+        problem.bookmark = !problem.bookmark;
+        saveData();
+      }
+    });
+  });
+  
+  // Notes modal functionality
+  const notesModal = document.getElementById('notes-modal');
+  const notesModalTitle = document.getElementById('notes-modal-title');
+  const notesContent = document.getElementById('notes-content');
+  const notesSaveBtn = document.getElementById('notes-save');
+  const notesCancelBtn = document.getElementById('notes-cancel');
+  let currentProblemId = null;
+  
+  // Open notes modal
+  document.querySelectorAll('.notes-button').forEach(button => {
+    button.addEventListener('click', function() {
+      currentProblemId = parseInt(this.dataset.problemId);
+      const problem = problemsData.find(p => p.id === currentProblemId);
+      const problemTitle = document.querySelector(`tr[data-index="${currentProblemId}"]`).dataset.title;
+      
+      notesModalTitle.textContent = `Notes: ${problemTitle}`;
+      notesContent.value = problem ? problem.notes || '' : '';
+      notesModal.classList.remove('hidden');
+    });
+  });
+  
+  // Close notes modal
+  notesCancelBtn.addEventListener('click', function() {
+    notesModal.classList.add('hidden');
+    currentProblemId = null;
+  });
+  
+  // Save notes
+  notesSaveBtn.addEventListener('click', function() {
+    if (currentProblemId !== null) {
+      const problem = problemsData.find(p => p.id === currentProblemId);
+      if (problem) {
+        problem.notes = notesContent.value;
+        saveData();
+      }
+      notesModal.classList.add('hidden');
+      currentProblemId = null;
+    }
+  });
+  
+  // Search functionality
+  const searchInput = document.getElementById('search-input');
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const rows = document.querySelectorAll('#problems-table tr');
+    
+    rows.forEach(row => {
+      const problemId = parseInt(row.dataset.index);
+      const problem = problemsData.find(p => p.id === problemId);
+      const title = row.dataset.title.toLowerCase();
+      const notes = problem ? (problem.notes || '').toLowerCase() : '';
+      
+      if (title.includes(searchTerm) || notes.includes(searchTerm)) {
+        row.classList.remove('hidden');
+      } else {
+        row.classList.add('hidden');
+      }
+    });
+  });
+  
+  // Pick random problem
+  const pickRandomBtn = document.getElementById('pick-random');
+  pickRandomBtn.addEventListener('click', function() {
+    const rows = Array.from(document.querySelectorAll('#problems-table tr:not(.hidden)'));
+    if (rows.length > 0) {
+      // Remove any existing highlights
+      rows.forEach(row => row.classList.remove('bg-yellow-100', 'dark:bg-yellow-900'));
+      
+      // Pick a random row
+      const randomIndex = Math.floor(Math.random() * rows.length);
+      const randomRow = rows[randomIndex];
+      
+      // Highlight the row
+      randomRow.classList.add('bg-yellow-100', 'dark:bg-yellow-900');
+      
+      // Scroll to the row
+      randomRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+  
+  // Initialize
+  loadSavedData();
+});
+</script>
+{{ end }}

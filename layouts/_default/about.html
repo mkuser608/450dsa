@@ -1,0 +1,162 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">
+      About 450 DSA Cracker
+    </h1>
+
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <div class="prose dark:prose-invert max-w-none">
+        <p>
+          450 DSA Cracker is a comprehensive collection of 450 Data Structures
+          and Algorithms problems designed to help you prepare for coding
+          interviews.
+        </p>
+        <p>This platform allows you to:</p>
+        <ul>
+          <li>Track your progress across different DSA topics</li>
+          <li>Systematically practice problems by difficulty</li>
+          <li>Save your progress locally in your browser</li>
+          <li>Export and import your progress data</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">
+          Data Management
+        </h2>
+        <div class="space-y-4">
+          <button
+            id="resetBtn"
+            class="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded transition duration-300"
+          >
+            Reset Progress
+          </button>
+          <button
+            id="exportBtn"
+            class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded transition duration-300"
+          >
+            Export Progress
+          </button>
+          <div class="flex items-center space-x-2">
+            <label
+              for="importFile"
+              class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded text-center cursor-pointer transition duration-300"
+            >
+              Import Progress
+            </label>
+            <input type="file" id="importFile" class="hidden" accept=".json" />
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">
+          Credits
+        </h2>
+        <div class="prose dark:prose-invert max-w-none">
+          <p>
+            This site is on
+            <a
+              href="https://github.com/mkuser608/450dsa"
+              target="_blank"
+              class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+              >Github</a
+            >
+            project.
+          </p>
+          <p>
+            The problem set is inspired by
+            <a
+              href="https://www.youtube.com/watch?v=4iFALQ1ACdA"
+              target="_blank"
+              class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300"
+              >Love Babbar's DSA Sheet</a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Reset progress
+    document.getElementById("resetBtn").addEventListener("click", function () {
+      if (
+        confirm(
+          "Are you sure you want to reset all progress? This cannot be undone."
+        )
+      ) {
+        // Clear all localStorage items that start with 'topic-'
+        Object.keys(localStorage).forEach((key) => {
+          if (key.startsWith("topic-")) {
+            localStorage.removeItem(key);
+          }
+        });
+        alert("Progress has been reset successfully.");
+        window.location.href = "/";
+      }
+    });
+
+    // Export progress
+    document.getElementById("exportBtn").addEventListener("click", function () {
+      const progressData = {};
+
+      // Collect all topic progress
+      Object.keys(localStorage).forEach((key) => {
+        if (key.startsWith("topic-")) {
+          progressData[key] = JSON.parse(localStorage.getItem(key));
+        }
+      });
+
+      // Create and download JSON file
+      const dataStr = JSON.stringify(progressData);
+      const dataUri =
+        "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
+
+      const exportFileDefaultName = "progress.json";
+
+      const linkElement = document.createElement("a");
+      linkElement.setAttribute("href", dataUri);
+      linkElement.setAttribute("download", exportFileDefaultName);
+      linkElement.click();
+    });
+
+    // Import progress
+    document
+      .getElementById("importFile")
+      .addEventListener("change", function (event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          try {
+            const data = JSON.parse(e.target.result);
+
+            // Validate data format
+            if (typeof data !== "object")
+              throw new Error("Invalid data format");
+
+            // Import data to localStorage
+            Object.keys(data).forEach((key) => {
+              if (key.startsWith("topic-") && Array.isArray(data[key])) {
+                localStorage.setItem(key, JSON.stringify(data[key]));
+              }
+            });
+
+            alert("Progress has been imported successfully.");
+            window.location.reload();
+          } catch (error) {
+            alert("Error importing data: " + error.message);
+          }
+        };
+        reader.readAsText(file);
+      });
+  });
+</script>
+{{ end }}
