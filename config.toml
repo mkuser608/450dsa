@@ -33,3 +33,4 @@ enableRobotsTXT = true
 [outputs]
   home = ["HTML", "RSS", "JSON", "SITEMAP"]
 
+disableKinds = ['sitemap']
