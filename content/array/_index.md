@@ -1,6 +1,8 @@
 ---
 {
   "title": "Array",
+  date: 2025-05-19,
+  lastmod: 2025-05-20,
   "problems": [
     {
       "title": "Reverse the array",

@@ -1,6 +1,8 @@
 ---
 {
   "title": "Bit Manipulation",
+   date: 2025-05-19,
+  lastmod: 2025-05-20,
   "problems": [
     {
       "title": "Count set bits in an integer",

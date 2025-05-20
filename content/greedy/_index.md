@@ -1,6 +1,8 @@
 ---
 {
   "title": "Greedy",
+   date: 2025-05-19,
+  lastmod: 2025-05-20,
   "problems": [
     {
       "title": "Activity Selection Problem",

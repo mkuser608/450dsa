@@ -1,6 +1,8 @@
 ---
 {
   "title": "LinkedList",
+   date: 2025-05-19,
+  lastmod: 2025-05-20,
   "problems": [
     {
       "title": "Write a Program to reverse the Linked List. (Both Iterative and recursive)",

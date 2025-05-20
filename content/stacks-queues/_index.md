@@ -1,6 +1,8 @@
 ---
 {
   "title": "Stacks & Queues",
+   date: 2025-05-19,
+  lastmod: 2025-05-20,
   "problems": [
     {
       "title": "Implement Stack from Scratch",

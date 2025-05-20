@@ -1,6 +1,8 @@
 ---
 {
   "title": "Heap",
+   date: 2025-05-19,
+  lastmod: 2025-05-20,
   "problems": [
     {
       "title": "Implement a Maxheap/MinHeap using arrays and recursion.",

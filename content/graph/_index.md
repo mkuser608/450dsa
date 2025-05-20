@@ -1,6 +1,8 @@
 ---
 {
   "title": "Graph",
+   date: 2025-05-19,
+  lastmod: 2025-05-20,
   "problems": [
     {
       "title": "Create a Graph, print it (implemented code)",

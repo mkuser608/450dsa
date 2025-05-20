@@ -1,6 +1,8 @@
 ---
 {
   "title": "Searching & Sorting",
+   date: 2025-05-19,
+  lastmod: 2025-05-20,
   "problems": [
     {
       "title": "Find first and last positions of an element in a sorted array",
