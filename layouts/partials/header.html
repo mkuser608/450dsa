@@ -1,22 +1,44 @@
 <header class="bg-primary-600 text-white shadow-md">
-  <div class="container mx-auto px-4 py-4">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="flex items-center mb-4 md:mb-0">
-        <a href="/" class="text-2xl font-bold hover:text-primary-200 transition duration-300">450 DSA Cracker</a>
-      </div>
-      <nav>
-        <ul class="flex space-x-6">
-          <li><a href="/" class="hover:text-primary-200 transition duration-300">Home</a></li>
-          <li><a href="/about/" class="hover:text-primary-200 transition duration-300">About</a></li>
-          <li>
-            <button id="darkModeToggle" class="hover:text-primary-200 transition duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-              </svg>
-            </button>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="/" class="text-2xl font-bold hover:text-primary-200 transition-colors duration-300">
+      450 DSA Cracker
+    </a>
+
+    <!-- Mobile Menu Button -->
+    <button id="navToggle" class="md:hidden focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Navigation -->
+    <nav id="navMenu" class="hidden md:flex space-x-6 items-center">
+      <a href="/" class="hover:text-primary-200 transition-colors duration-300">Home</a>
+      <a href="/about/" class="hover:text-primary-200 transition-colors duration-300">About</a>
+      <button id="darkModeToggle" class="hover:text-primary-200 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+        </svg>
+      </button>
+    </nav>
   </div>
+
+  <!-- Mobile Dropdown -->
+  <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
+    <a href="/" class="block hover:text-primary-200 transition">Home</a>
+    <a href="/about/" class="block hover:text-primary-200 transition">About</a>
+    <button id="darkModeToggleMobile" class="hover:text-primary-200 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
+        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    // Toggle mobile menu
+    document.getElementById('navToggle').addEventListener('click', function () {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+  </script>
 </header>
