@@ -3,17 +3,17 @@
     <a href="/" class="text-2xl font-bold hover:text-primary-200 transition-colors duration-300">
       450 DSA Cracker
     </a>
-
     <!-- Mobile Menu Button -->
     <button id="navToggle" class="md:hidden focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
-
     <!-- Navigation -->
     <nav id="navMenu" class="hidden md:flex space-x-6 items-center">
       <a href="/" class="hover:text-primary-200 transition-colors duration-300">Home</a>
+      <a href="/account/" class="hover:text-primary-200 transition-colors duration-300">Account</a>
+      <a href="/leaderboard/" class="hover:text-primary-200 transition-colors duration-300">Leaderboard</a>
       <a href="/about/" class="hover:text-primary-200 transition-colors duration-300">About</a>
       <button id="darkModeToggle" class="hover:text-primary-200 transition-colors duration-300">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -22,10 +22,11 @@
       </button>
     </nav>
   </div>
-
   <!-- Mobile Dropdown -->
   <div id="mobileMenu" class="md:hidden hidden px-4 pb-4 space-y-2">
     <a href="/" class="block hover:text-primary-200 transition">Home</a>
+    <a href="/account/" class="block hover:text-primary-200 transition">Account</a>
+    <a href="/leaderboard/" class="block hover:text-primary-200 transition">Leaderboard</a>
     <a href="/about/" class="block hover:text-primary-200 transition">About</a>
     <button id="darkModeToggleMobile" class="hover:text-primary-200 transition">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">
@@ -33,12 +34,25 @@
       </svg>
     </button>
   </div>
-
   <script>
     // Toggle mobile menu
     document.getElementById('navToggle').addEventListener('click', function () {
       const menu = document.getElementById('mobileMenu');
       menu.classList.toggle('hidden');
+    });
+    
+    // Ensure the menu is visible on larger screens
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 768) { // md breakpoint
+        document.getElementById('navMenu').classList.remove('hidden');
+      }
+    });
+    
+    // Force show the menu on page load for larger screens
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.innerWidth >= 768) {
+        document.getElementById('navMenu').classList.remove('hidden');
+      }
     });
   </script>
 </header>

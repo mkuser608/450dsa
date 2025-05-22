@@ -1,0 +1,260 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-3xl font-bold text-center text-gray-800 dark:text-white mb-8">Account</h1>
+  
+  <div class="max-w-3xl mx-auto">
+    <!-- Authentication Status Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <!-- Not Logged In View -->
+      <div id="not-logged-in" class="text-center">
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Sign In to Sync Your Progress</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Sign in to save your progress to the cloud and access it from any device. 
+          Your existing local progress will be preserved and merged with any cloud data.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button id="google-signin" class="btn-auth bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24">
+              <path fill="#EA4335" d="M5.26620003,9.76452941 C6.19878754,6.93863203 8.85444915,4.90909091 12,4.90909091 C13.6909091,4.90909091 15.2181818,5.50909091 16.4181818,6.49090909 L19.9090909,3 C17.7818182,1.14545455 15.0545455,0 12,0 C7.27006974,0 3.1977497,2.69829785 1.23999023,6.65002441 L5.26620003,9.76452941 Z" />
+              <path fill="#34A853" d="M16.0407269,18.0125889 C14.9509167,18.7163016 13.5660892,19.0909091 12,19.0909091 C8.86648613,19.0909091 6.21911939,17.076871 5.27698177,14.2678769 L1.23746264,17.3349879 C3.19279051,21.2970142 7.26500293,24 12,24 C14.9328362,24 17.7353462,22.9573905 19.834192,20.9995801 L16.0407269,18.0125889 Z" />
+              <path fill="#4A90E2" d="M19.834192,20.9995801 C22.0291676,18.9520994 23.4545455,15.903663 23.4545455,12 C23.4545455,11.2909091 23.3454545,10.5272727 23.1818182,9.81818182 L12,9.81818182 L12,14.4545455 L18.4363636,14.4545455 C18.1187732,16.013626 17.2662994,17.2212117 16.0407269,18.0125889 L19.834192,20.9995801 Z" />
+              <path fill="#FBBC05" d="M5.27698177,14.2678769 C5.03832634,13.556323 4.90909091,12.7937589 4.90909091,12 C4.90909091,11.2182781 5.03443647,10.4668121 5.26620003,9.76452941 L1.23999023,6.65002441 C0.43658717,8.26043162 0,10.0753848 0,12 C0,13.9195484 0.444780743,15.7301709 1.23746264,17.3349879 L5.27698177,14.2678769 Z" />
+            </svg>
+            Sign in with Google
+          </button>
+          <button id="github-signin" class="btn-auth bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-4 border border-gray-700 rounded shadow flex items-center justify-center">
+            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="white">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            Sign in with GitHub
+          </button>
+        </div>
+      </div>
+      
+      <!-- Logged In View -->
+      <div id="logged-in" class="hidden">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center">
+            <img id="user-avatar" src="" alt="Profile" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h2 id="user-name" class="text-xl font-semibold text-gray-800 dark:text-white"></h2>
+              <p id="user-email" class="text-gray-600 dark:text-gray-300 text-sm"></p>
+            </div>
+          </div>
+          <button id="sign-out" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded shadow">
+            Sign Out
+          </button>
+        </div>
+        
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+          <h3 class="text-lg font-semibold text-gray-800 dark:text-white mb-2">Data Synchronization</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">
+            Your progress is automatically synced with the cloud. Last synced: <span id="last-synced">Never</span>
+          </p>
+          <div class="flex space-x-4">
+            <button id="sync-now" class="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 rounded shadow">
+              Sync Now
+            </button>
+            <button id="export-data" class="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-semibold py-2 px-4 rounded shadow">
+              Export Data
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Progress Summary Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Your Progress</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+          <h3 class="text-lg font-medium text-gray-800 dark:text-white mb-2">Total Problems</h3>
+          <p id="total-problems" class="text-3xl font-bold text-primary-600">0</p>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-4">
+          <h3 class="text-lg font-medium text-gray-800 dark:text-white mb-2">Completed</h3>
+          <p id="completed-problems" class="text-3xl font-bold text-green-600">0</p>
+        </div>
+      </div>
+      
+      <div class="mb-4">
+        <h3 class="text-lg font-medium text-gray-800 dark:text-white mb-2">Overall Progress</h3>
+        <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4">
+          <div id="overall-progress" class="bg-primary-600 h-4 rounded-full" style="width: 0%"></div>
+        </div>
+        <p class="text-right mt-1 text-sm text-gray-600 dark:text-gray-400">
+          <span id="progress-percentage">0</span>% Complete
+        </p>
+      </div>
+      
+      <div>
+        <h3 class="text-lg font-medium text-gray-800 dark:text-white mb-2">Topic Breakdown</h3>
+        <div id="topic-progress" class="space-y-3">
+          <!-- Topic progress items will be inserted here dynamically -->
+        </div>
+      </div>
+    </div>
+    
+    <!-- Settings Card -->
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+      <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Settings</h2>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="flex items-center cursor-pointer">
+            <div class="relative">
+              <input id="auto-sync" type="checkbox" class="sr-only">
+              <div class="block bg-gray-300 dark:bg-gray-600 w-14 h-8 rounded-full"></div>
+              <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+            </div>
+            <div class="ml-3 text-gray-700 dark:text-gray-300 font-medium">
+              Auto-sync progress (when signed in)
+            </div>
+          </label>
+        </div>
+        
+        <div>
+          <label class="flex items-center cursor-pointer">
+            <div class="relative">
+              <input id="show-leaderboard" type="checkbox" class="sr-only">
+              <div class="block bg-gray-300 dark:bg-gray-600 w-14 h-8 rounded-full"></div>
+              <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+            </div>
+            <div class="ml-3 text-gray-700 dark:text-gray-300 font-medium">
+              Show my progress on leaderboard
+            </div>
+          </label>
+        </div>
+        
+        <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+          <button id="reset-progress" class="bg-red-100 hover:bg-red-200 dark:bg-red-900 dark:hover:bg-red-800 text-red-800 dark:text-red-200 font-semibold py-2 px-4 rounded shadow">
+            Reset All Progress
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Toggle switch styling */
+  input:checked ~ .dot {
+    transform: translateX(100%);
+  }
+  input:checked ~ .block {
+    background-color: #2563eb;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Toggle switch functionality
+    const toggles = document.querySelectorAll('input[type="checkbox"]');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('change', function() {
+        const block = this.parentNode.querySelector('.block');
+        if (this.checked) {
+          block.classList.remove('bg-gray-300', 'dark:bg-gray-600');
+          block.classList.add('bg-primary-600');
+        } else {
+          block.classList.add('bg-gray-300', 'dark:bg-gray-600');
+          block.classList.remove('bg-primary-600');
+        }
+      });
+    });
+    
+    // Placeholder for progress calculation
+    // This will be replaced with actual data in the Firebase implementation
+    updateProgressDisplay();
+  });
+  
+  function updateProgressDisplay() {
+    // This is a placeholder function that will be replaced with actual data
+    // from localStorage and Firebase in the implementation
+    const totalProblems = 450;
+    let completedProblems = 0;
+    
+    // Topic slugs from the existing site
+    const topicSlugs = {
+      'array': 'Array',
+      'matrix': 'Matrix',
+      'string': 'String',
+      'searching-sorting': 'Searching & Sorting',
+      'linked-list': 'Linked List',
+      'binary-trees': 'Binary Trees',
+      'bst': 'Binary Search Trees',
+      'greedy': 'Greedy',
+      'backtracking': 'Backtracking',
+      'stacks-queues': 'Stacks & Queues',
+      'heap': 'Heap',
+      'graph': 'Graph',
+      'trie': 'Trie',
+      'dynamic-programming': 'Dynamic Programming',
+      'bit-manipulation': 'Bit Manipulation'
+    };
+    
+    // Topic problem counts
+    const topicProblemCounts = {
+      'array': 36,
+      'matrix': 10,
+      'string': 43,
+      'searching-sorting': 36,
+      'linked-list': 36,
+      'binary-trees': 35,
+      'bst': 22,
+      'greedy': 35,
+      'backtracking': 19,
+      'stacks-queues': 38,
+      'heap': 18,
+      'graph': 44,
+      'trie': 6,
+      'dynamic-programming': 60,
+      'bit-manipulation': 10
+    };
+    
+    // Calculate completed problems from localStorage
+    const topicProgressHTML = [];
+    Object.keys(topicSlugs).forEach(slug => {
+      let topicCompleted = 0;
+      const totalTopicProblems = topicProblemCounts[slug] || 0;
+      
+      try {
+        const savedData = localStorage.getItem(`topic-${slug}`);
+        if (savedData) {
+          const progressData = JSON.parse(savedData);
+          topicCompleted = progressData.filter(problem => problem.done).length;
+          completedProblems += topicCompleted;
+        }
+      } catch (error) {
+        console.error(`Error loading saved data for ${slug}:`, error);
+      }
+      
+      const percentage = Math.round((topicCompleted / totalTopicProblems) * 100) || 0;
+      
+      // Add to topic progress HTML
+      topicProgressHTML.push(`
+        <div>
+          <div class="flex justify-between mb-1">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">${topicSlugs[slug]}</span>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">${topicCompleted}/${totalTopicProblems}</span>
+          </div>
+          <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+            <div class="bg-primary-600 h-2.5 rounded-full" style="width: ${percentage}%"></div>
+          </div>
+        </div>
+      `);
+    });
+    
+    // Update the DOM with calculated values
+    document.getElementById('total-problems').textContent = totalProblems;
+    document.getElementById('completed-problems').textContent = completedProblems;
+    
+    const overallPercentage = Math.round((completedProblems / totalProblems) * 100);
+    document.getElementById('overall-progress').style.width = `${overallPercentage}%`;
+    document.getElementById('progress-percentage').textContent = overallPercentage;
+    
+    document.getElementById('topic-progress').innerHTML = topicProgressHTML.join('');
+  }
+</script>
+{{ end }}
