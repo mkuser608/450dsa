@@ -1,53 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-{{ partial "head.html" . }}
+  {{ partial "head.html" . }}
 
-<body class="min-h-screen bg-gray-50 dark:bg-gray-900">
-  <header class="site-header">
-    <div class="container mx-auto px-4">
-      <div class="flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold">450 DSA Cracker</a>
-        <nav class="flex space-x-6">
-          <a href="/" class="hover:text-primary-200">Home</a>
-          <a href="/about/" class="hover:text-primary-200">About</a>
-          <button id="theme-toggle" class="p-2 rounded-full hover:bg-primary-700 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-            </svg>
-          </button>
-        </nav>
+  <body class="min-h-screen bg-gray-50 dark:bg-gray-900">
+    {{ partial "header.html" . }}
+
+    <main class="py-8">{{ block "main" . }}{{ end }}</main>
+
+    <footer class="bg-gray-100 dark:bg-gray-800 py-6">
+      <div
+        class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
+        <p>
+          &copy; {{ now.Format "2006" }} 450 DSA Cracker. All rights reserved.
+        </p>
       </div>
-    </div>
-  </header>
+    </footer>
 
-  <main class="py-0">
-    {{ block "main" . }}{{ end }}
-  </main>
+    <script>
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
 
-  <footer class="bg-gray-100 dark:bg-gray-800 py-6">
-    <div class="container mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
-      <p>&copy; {{ now.Format "2006" }} 450 DSA Cracker. All rights reserved.</p>
-    </div>
-  </footer>
+      // Check for saved theme preference or use system preference
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        html.classList.add('dark');
+      }
 
-  <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    // Check for saved theme preference or use system preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.classList.add('dark');
-    }
-
-    // Toggle theme on button click
-    themeToggle.addEventListener('click', function () {
-      html.classList.toggle('dark');
-      const isDark = html.classList.contains('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-  </script>
-</body>
-
+      // Toggle theme on button click
+      themeToggle.addEventListener('click', function () {
+        html.classList.toggle('dark');
+        const isDark = html.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    </script>
+  </body>
 </html>
