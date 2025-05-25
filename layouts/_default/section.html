@@ -1,5 +1,5 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-8 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+<div class=" mx-auto px-4 py-8 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
   <!-- Animated Background Elements -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none">
     <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
@@ -335,29 +335,33 @@
       document.getElementById('completed-problems').textContent = completedCount;
 
       // Update checkboxes and bookmarks
-      problemsData.forEach(problem => {
+            problemsData.forEach(problem => {
         const checkbox = document.querySelector(`.problem-checkbox[data-problem-id="${problem.id}"]`);
         if (checkbox) {
           checkbox.checked = problem.done;
           const toggle = checkbox.nextElementSibling;
           if (problem.done) {
-            toggle.classList.add('bg-primary-600');
-            toggle.classList.remove('border-gray-300', 'dark:border-gray-600');
+            toggle.classList.add('bg-gradient-to-r', 'from-green-500', 'to-emerald-500', 'border-green-400', 'shadow-lg', 'shadow-green-500/50');
+            toggle.classList.remove('border-cyan-500/50');
             toggle.querySelector('svg').classList.remove('opacity-0');
+            toggle.querySelector('svg').classList.add('text-white');
 
             // Add strikethrough to completed problems
             const row = checkbox.closest('tr');
             const titleEl = row.querySelector('.problem-title');
-            titleEl.classList.add('line-through', 'text-gray-400', 'dark:text-gray-500');
+            titleEl.classList.add('line-through', 'text-green-400/70');
+            titleEl.classList.remove('text-white');
           } else {
-            toggle.classList.remove('bg-primary-600');
-            toggle.classList.add('border-gray-300', 'dark:border-gray-600');
+            toggle.classList.remove('bg-gradient-to-r', 'from-green-500', 'to-emerald-500', 'border-green-400', 'shadow-lg', 'shadow-green-500/50');
+            toggle.classList.add('border-cyan-500/50');
             toggle.querySelector('svg').classList.add('opacity-0');
+            toggle.querySelector('svg').classList.remove('text-white');
 
             // Remove strikethrough
             const row = checkbox.closest('tr');
             const titleEl = row.querySelector('.problem-title');
-            titleEl.classList.remove('line-through', 'text-gray-400', 'dark:text-gray-500');
+            titleEl.classList.remove('line-through', 'text-green-400/70');
+            titleEl.classList.add('text-white');
           }
         }
 
@@ -365,11 +369,11 @@
         if (bookmarkButton) {
           const svgIcon = bookmarkButton.querySelector('svg');
           if (problem.bookmark) {
-            svgIcon.classList.add('text-yellow-500');
-            svgIcon.classList.remove('text-gray-400');
+            svgIcon.classList.add('text-yellow-400');
+            svgIcon.classList.remove('text-slate-500');
           } else {
-            svgIcon.classList.add('text-gray-400');
-            svgIcon.classList.remove('text-yellow-500');
+            svgIcon.classList.add('text-slate-500');
+            svgIcon.classList.remove('text-yellow-400');
           }
         }
 
@@ -378,11 +382,11 @@
         if (notesButton) {
           const svgIcon = notesButton.querySelector('svg');
           if (problem.notes && problem.notes.trim() !== '') {
-            svgIcon.classList.add('text-primary-500');
-            svgIcon.classList.remove('text-gray-400');
+            svgIcon.classList.add('text-cyan-400');
+            svgIcon.classList.remove('text-slate-500');
           } else {
-            svgIcon.classList.add('text-gray-400');
-            svgIcon.classList.remove('text-primary-500');
+            svgIcon.classList.add('text-slate-500');
+            svgIcon.classList.remove('text-cyan-400');
           }
         }
       });
@@ -514,10 +518,16 @@
     filterButtons.forEach(button => {
       button.addEventListener('click', function () {
         // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active', 'bg-primary-100', 'dark:bg-primary-900/30', 'text-primary-700', 'dark:text-primary-400'));
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+          btn.classList.remove('border-cyan-400', 'text-cyan-300', 'shadow-cyan-500/50');
+          btn.classList.add('border-cyan-500/30', 'text-cyan-200');
+        });
 
         // Add active class to clicked button
-        this.classList.add('active', 'bg-primary-100', 'dark:bg-primary-900/30', 'text-primary-700', 'dark:text-primary-400');
+        this.classList.add('active');
+        this.classList.remove('border-cyan-500/30', 'text-cyan-200');
+        this.classList.add('border-cyan-400', 'text-cyan-300', 'shadow-cyan-500/50');
 
         // Set current filter based on button id
         currentFilter = this.id.replace('filter-', '');
@@ -570,7 +580,7 @@
       if (visibleRows.length > 0) {
         // Remove any existing highlights
         document.querySelectorAll('.highlighted-row').forEach(row => {
-          row.classList.remove('highlighted-row', 'bg-yellow-50', 'dark:bg-yellow-900/30');
+          row.classList.remove('highlighted-row', 'bg-purple-900/30', 'border-purple-500');
         });
 
         // Pick a random row
@@ -578,7 +588,8 @@
         const randomRow = visibleRows[randomIndex];
 
         // Highlight the row
-        randomRow.classList.add('highlighted-row', 'bg-yellow-50', 'dark:bg-yellow-900/30');
+        randomRow.classList.add('highlighted-row', 'bg-purple-900/30');
+        randomRow.style.borderLeft = '4px solid rgb(168 85 247)';
 
         // Add subtle animation
         randomRow.classList.add('animate-pulse');
@@ -591,12 +602,11 @@
 
         // Show notification
         const problemTitle = randomRow.dataset.title;
-        showNotification(`Selected: ${problemTitle}`);
+        showNotification(`RANDOM MISSION SELECTED: ${problemTitle}`);
       } else {
-        showNotification("No matching problems found!");
+        showNotification("NO AVAILABLE MISSIONS FOUND!");
       }
     });
-
     // Toast notification system
     function showNotification(message) {
       // Remove any existing notifications
@@ -648,35 +658,9 @@
       }
     });
 
-    // Dark mode toggle (optional, can be implemented elsewhere in the Hugo template)
-    const addDarkModeToggle = () => {
-      const header = document.querySelector('.container');
-      if (!header) return;
 
-      const darkModeToggle = document.createElement('button');
-      darkModeToggle.className = 'absolute top-4 right-4 p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors';
-      darkModeToggle.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800 dark:text-gray-200" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
-      </svg>
-    `;
 
-      darkModeToggle.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-        localStorage.setItem('darkMode', document.documentElement.classList.contains('dark') ? 'true' : 'false');
-      });
 
-      header.style.position = 'relative';
-      header.appendChild(darkModeToggle);
-    };
-
-    // Initialize dark mode from localStorage
-    const initDarkMode = () => {
-      if (localStorage.getItem('darkMode') === 'true' ||
-        (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-      }
-    };
 
     // Statistics feature
     const addStatsDashboard = () => {
