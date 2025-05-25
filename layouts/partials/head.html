@@ -1,43 +1,48 @@
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker</title>
-  <meta
-    name="description"
-    content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}" />
-
+  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}">
+  
   <!-- SEO Meta Tags -->
-  <meta
-    property="og:title"
-    content="{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker" />
-  <meta
-    property="og:description"
-    content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ .Permalink }}" />
-  <meta name="twitter:card" content="summary_large_image" />
-
+  <meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker">
+  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta name="twitter:card" content="summary_large_image">
+  
   <!-- Canonical URL -->
-  <link rel="canonical" href="{{ .Permalink }}" />
-
+  <link rel="canonical" href="{{ .Permalink }}">
+  
   <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
-
+  <link rel="icon" href="/favicon.ico">
+  
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <!-- Tailwind CSS -->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-  <!-- Alpine.js from CDN - Load before any custom scripts -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google tag (gtag.js) -->
   <script
-    src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
-    defer></script>
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-X89WFZGEJ7"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
+    gtag("config", "G-X89WFZGEJ7");
+  </script>
+
+  
+  <!-- Alpine.js from CDN - Load before any custom scripts -->
+  <script src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+  
   <!-- Custom CSS for bluish theme -->
   <style>
     :root {
@@ -52,36 +57,36 @@
       --primary-800: #1e40af;
       --primary-900: #1e3a8a;
     }
-
+    
     body {
       background-color: #f8fafc;
       font-family: 'Inter', sans-serif;
     }
-
+    
     .dark body {
       background-color: #1e293b;
     }
-
+    
     .bg-primary-600 {
       background-color: #2563eb !important;
     }
-
+    
     .hover\:bg-primary-700:hover {
       background-color: #1d4ed8 !important;
     }
-
+    
     .text-primary-600 {
       color: #2563eb !important;
     }
-
+    
     .text-primary-400 {
       color: #60a5fa !important;
     }
-
+    
     .border-primary-600 {
       border-color: #2563eb !important;
     }
-
+    
     /* Header styling */
     .site-header {
       background-color: #2563eb;
@@ -89,16 +94,16 @@
       padding: 1rem;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
-
+    
     .site-header a {
       color: white;
       font-weight: 500;
     }
-
+    
     .site-header a:hover {
       color: #bfdbfe;
     }
-
+    
     /* Button styling */
     .btn {
       display: inline-block;
@@ -107,16 +112,16 @@
       border-radius: 0.375rem;
       transition: all 0.3s ease;
     }
-
+    
     .btn-primary {
       background-color: #2563eb;
       color: white;
     }
-
+    
     .btn-primary:hover {
       background-color: #1d4ed8;
     }
-
+    
     /* Card styling */
     .card {
       background-color: white;
@@ -124,17 +129,17 @@
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       overflow: hidden;
     }
-
+    
     .card-header {
       background-color: #2563eb;
       color: white;
       padding: 1rem;
     }
-
+    
     .dark .card {
       background-color: #1f2937;
     }
-
+    
     /* Progress bar styling */
     .progress-bar {
       height: 0.5rem;
@@ -142,44 +147,44 @@
       border-radius: 9999px;
       overflow: hidden;
     }
-
+    
     .progress-bar-fill {
       height: 100%;
       background-color: #2563eb;
       border-radius: 9999px;
     }
-
+    
     /* Table styling */
     .table-header {
       background-color: #f1f5f9;
     }
-
+    
     .dark .table-header {
       background-color: #374151;
     }
-
+    
     .table-row:hover {
       background-color: #f8fafc;
     }
-
+    
     .dark .table-row:hover {
       background-color: #1f2937;
     }
-
+    
     /* Toggle switch styling */
     input:checked ~ .dot {
       transform: translateX(100%);
     }
-
+    
     input:checked ~ .block {
       background-color: #2563eb;
     }
-
+    
     /* Auth button styling */
     .btn-auth {
       transition: all 0.3s ease;
     }
-
+    
     /* Toggle checkbox styling */
     .toggle-checkbox:checked {
       right: 0;
@@ -192,12 +197,12 @@
       transition: background-color 0.3s ease;
     }
   </style>
-
+  
   <!-- Firebase from CDN - Load after Alpine.js but before custom scripts -->
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-
+  
   <!-- Initialize Alpine stores before loading custom auth script -->
   <script>
     document.addEventListener('alpine:init', () => {
@@ -206,26 +211,26 @@
         loading: true,
         message: '',
         error: null,
-
+        
         setLoading(isLoading) {
           this.loading = isLoading;
         },
-
+        
         setMessage(message) {
           this.message = message;
         },
-
+        
         setError(error) {
           this.error = error;
           console.error('Auth error:', error);
         },
-
+        
         clearMessages() {
           this.message = '';
           this.error = null;
         }
       });
-
+      
       // Initialize auth store with placeholder methods
       Alpine.store('auth', {
         currentUser: null,
@@ -234,32 +239,32 @@
           autoSync: true,
           showOnLeaderboard: false
         },
-
+        
         login() {
           console.log('Login method will be implemented in auth-config.js');
         },
-
+        
         register() {
           console.log('Register method will be implemented in auth-config.js');
         },
-
+        
         loginWithGoogle() {
           console.log('Google login method will be implemented in auth-config.js');
         },
-
+        
         loginWithGithub() {
           console.log('GitHub login method will be implemented in auth-config.js');
         },
-
+        
         logout() {
           console.log('Logout method will be implemented in auth-config.js');
         }
       });
-
+      
       console.log('Alpine stores initialized');
     });
   </script>
-
+  
   <!-- Custom Auth Script - Loaded after Alpine.js and Firebase -->
   <script src="/js/auth-config.js" defer></script>
 </head>
