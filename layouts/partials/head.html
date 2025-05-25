@@ -1,26 +1,44 @@
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker</title>
-  <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}">
-  
-  <!-- SEO Meta Tags -->
-  <meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}450 DSA Cracker">
-  <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}A curated list of 450 DSA problems to crack your coding interviews.{{ end }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <!-- Canonical URL -->
-  <link rel="canonical" href="{{ .Permalink }}">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .Title }}{{ .Title }} | {{ end }}DSA 450 Cracker - Master 450+ Data Structures & Algorithms Problems</title>
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}Master DSA 450 problems with curated solutions. Company-specific question lists, progress tracking, and expert tips to crack coding interviews. Start your preparation today!{{ end }}">
+
+<!-- SEO Meta Tags -->
+<meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}DSA 450 Cracker - Complete Interview Preparation Guide">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}Comprehensive roadmap to solve 450 essential DSA problems. Includes LeetCode solutions, time complexity analysis, and interview success strategies.{{ end }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ .Site.BaseURL }}images/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{{ .Site.BaseURL }}images/android-chrome-512x512.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "DSA 450 Cracker",
+  "description": "Comprehensive Data Structures and Algorithms preparation course with 450 coding problems",
+  "image": "{{ .Site.BaseURL }}images/android-chrome-512x512.png",
+  "author": {
+    "@type": "Organization",
+    "name": "Bytezone"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "self-paced",
+    "courseWorkload": "PT60H"
+  }
+}
+</script>
+
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="/images/favicon.ico">
+
+<!-- Preload Critical Resources -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
   
   <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
