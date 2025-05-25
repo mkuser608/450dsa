@@ -57,7 +57,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
         <div class="glass-panel rounded-2xl p-6 text-center border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 group">
-          <div class="text-sm text-cyan-300 tracking-wider mb-2">TOTAL MISSIONS</div>
+          <div class="text-sm text-cyan-300 tracking-wider mb-2">TOTAL PROBLEMS</div>
           <div class="text-3xl font-bold text-white mt-1 group-hover:scale-110 transition-transform duration-300" id="total-problems">{{ if .Params.problems }}{{ len .Params.problems }}{{ else }}0{{ end }}</div>
           <div class="w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-3 opacity-60"></div>
         </div>
@@ -74,7 +74,7 @@
                 d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
                 clip-rule="evenodd" />
             </svg>
-            RANDOM MISSION
+            RANDOM PROBLEM
           </button>
         </div>
       </div>
@@ -83,7 +83,7 @@
     <!-- Search and Filter Bar -->
     <div class="mb-8 flex flex-col md:flex-row gap-6">
       <div class="relative flex-grow">
-        <input type="text" id="search-input" placeholder="SCAN FOR MISSIONS OR DATA LOGS..."
+        <input type="text" id="search-input" placeholder="SCAN FOR PROBLEMS OR COMMENTS..."
           class="w-full px-6 py-4 glass-morphism border border-cyan-500/30 rounded-2xl focus:outline-none focus:border-cyan-400 focus:shadow-lg focus:shadow-cyan-500/25 text-white placeholder-cyan-300/70 pl-14 tracking-wide transition-all duration-300">
         <div class="absolute inset-y-0 left-0 flex items-center pl-4">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
@@ -123,13 +123,13 @@
                 STATUS
               </th>
               <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
-                MISSION BRIEF
+                PROBLEMS
               </th>
               <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
-                PRIORITY
+                BOOKMARKS
               </th>
               <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
-                DATA LOGS
+                COMMENTS
               </th>
               <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
                 ACCESS
