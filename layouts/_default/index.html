@@ -1,185 +1,295 @@
 {{ define "main" }}
-<main class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300">
+<main
+  class="bg-gray-50 dark:bg-gray-900 min-h-screen transition-colors duration-300">
   <!-- Hero Section with enhanced design -->
-  <section class="pt-20 pb-16 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 text-white relative overflow-hidden">
-    <!-- Animated background elements -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
-      <div class="absolute top-3/4 right-1/4 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse animation-delay-2000"></div>
+ <div class="fixed inset-0 opacity-10 pointer-events-none">
+    <div class="absolute w-full h-full bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
+    <div class="absolute top-0 left-0 w-full h-full">
+      <div class="absolute animate-pulse w-2 h-20 bg-cyan-400/30 top-10 left-10"></div>
+      <div class="absolute animate-pulse w-2 h-32 bg-purple-400/30 top-20 right-20 animation-delay-1000"></div>
+      <div class="absolute animate-pulse w-2 h-24 bg-pink-400/30 bottom-20 left-1/3 animation-delay-2000"></div>
+      <div class="absolute animate-pulse w-2 h-40 bg-green-400/30 top-1/3 right-1/3 animation-delay-3000"></div>
     </div>
-    
+  </div>
+
+  <!-- Hero Section - Cyberpunk Style -->
+  <section class="pt-20 pb-16 bg-gradient-to-br from-slate-900 via-black to-slate-800 text-white relative overflow-hidden border-b border-cyan-500/30">
+    <!-- Holographic Grid Background -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute w-full h-full bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent animate-pulse"></div>
+      <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle at 1px 1px, rgba(0,245,255,0.3) 1px, transparent 0); background-size: 50px 50px;"></div>
+    </div>
+
+    <!-- Floating Neon Elements -->
+    <div class="absolute inset-0">
+      <div class="absolute top-1/4 left-1/4 w-32 h-32 rounded-full border-2 border-cyan-400/50 animate-spin" style="animation-duration: 20s;"></div>
+      <div class="absolute top-3/4 right-1/4 w-24 h-24 rounded-full border-2 border-purple-400/50 animate-spin" style="animation-duration: 15s; animation-direction: reverse;"></div>
+      <div class="absolute top-1/2 right-1/3 w-16 h-16 bg-gradient-to-r from-pink-500/30 to-cyan-500/30 rounded-full animate-pulse"></div>
+    </div>
+
     <div class="container mx-auto px-4 relative z-10">
       <div class="max-w-5xl mx-auto text-center">
         <div class="mb-6">
-          <span class="inline-block px-4 py-2 text-sm font-semibold bg-white/20 backdrop-blur-sm rounded-full border border-white/30">
-            🚀 Master Coding Interviews
+          <span class="inline-block px-6 py-3 text-sm font-bold bg-gradient-to-r from-cyan-500/20 to-purple-500/20 backdrop-blur-sm rounded-full border border-cyan-400/50 text-cyan-300 shadow-lg shadow-cyan-500/25">
+            🚀 NEURAL LINK TRAINING PROTOCOL
           </span>
         </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-          450 DSA Cracker
+        
+        <h1 class="text-6xl md:text-8xl font-black mb-6 orbitron bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent relative">
+          450 DSA CRACKER
+          <div class="absolute -inset-1 bg-gradient-to-r from-cyan-600/20 to-purple-600/20 blur-xl"></div>
         </h1>
-        <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Master Data Structures & Algorithms with our comprehensive collection of handpicked problems. 
-          Build confidence for FAANG interviews with systematic practice.
+        
+        <p class="text-xl md:text-2xl text-cyan-100 mb-8 max-w-3xl mx-auto leading-relaxed font-light">
+          INTERFACE WITH THE QUANTUM MATRIX • DECODE ALGORITHMIC SEQUENCES • DOMINATE CORPORATE NEURAL TESTS
         </p>
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
-          <a href="#topics"
-            class="btn bg-white text-indigo-700 hover:bg-blue-50 font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-2xl hover:shadow-white/25 hover:scale-105 transform">
-            🎯 Start Practicing Now
+        
+        <div class="flex flex-wrap justify-center gap-6 mb-12">
+          <a href="#topics" class="group relative inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 text-white font-bold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 transform shadow-lg shadow-cyan-500/50 hover:shadow-cyan-400/75">
+            <span class="relative z-10 flex items-center gap-3">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+              </svg>
+              INITIALIZE PROTOCOL
+            </span>
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
-          <a href="/about/"
-            class="btn bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white/20 font-semibold px-8 py-4 rounded-xl transition-all duration-300">
-            📚 Learn More
+          
+          <a href="/about/" class="group relative inline-flex items-center px-8 py-4 bg-transparent border-2 border-cyan-400/50 text-cyan-300 font-bold rounded-lg transition-all duration-300 hover:border-cyan-400 hover:bg-cyan-400/10 hover:text-white">
+            <span class="flex items-center gap-3">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+              </svg>
+              ACCESS DATABANK
+            </span>
           </a>
         </div>
-        
-        <!-- Key highlights -->
+
+        <!-- Holographic Info Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-            <div class="text-3xl mb-2">⚡</div>
-            <h3 class="font-bold text-lg mb-2">Interview Ready</h3>
-            <p class="text-blue-100 text-sm">Curated problems from top tech companies</p>
+          <div class="bg-gradient-to-br from-cyan-900/30 to-blue-900/30 backdrop-blur-sm rounded-2xl p-6 border border-cyan-400/30 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-400/40 transition-all duration-300">
+            <div class="text-4xl mb-4 text-cyan-400">⚡</div>
+            <h3 class="font-bold text-lg mb-2 text-cyan-300 orbitron">COMBAT READY</h3>
+            <p class="text-cyan-100/80 text-sm">Elite-grade algorithms from mega-corps</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-            <div class="text-3xl mb-2">📊</div>
-            <h3 class="font-bold text-lg mb-2">Track Progress</h3>
-            <p class="text-blue-100 text-sm">Visual dashboards and completion stats</p>
+          
+          <div class="bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur-sm rounded-2xl p-6 border border-purple-400/30 shadow-lg shadow-purple-500/20 hover:shadow-purple-400/40 transition-all duration-300">
+            <div class="text-4xl mb-4 text-purple-400">📊</div>
+            <h3 class="font-bold text-lg mb-2 text-purple-300 orbitron">NEURAL SYNC</h3>
+            <p class="text-purple-100/80 text-sm">Real-time progress monitoring systems</p>
           </div>
-          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-            <div class="text-3xl mb-2">🎓</div>
-            <h3 class="font-bold text-lg mb-2">Structured Learning</h3>
-            <p class="text-blue-100 text-sm">15 topics with difficulty progression</p>
+          
+          <div class="bg-gradient-to-br from-pink-900/30 to-red-900/30 backdrop-blur-sm rounded-2xl p-6 border border-pink-400/30 shadow-lg shadow-pink-500/20 hover:shadow-pink-400/40 transition-all duration-300">
+            <div class="text-4xl mb-4 text-pink-400">🎓</div>
+            <h3 class="font-bold text-lg mb-2 text-pink-300 orbitron">MATRIX EDUCATION</h3>
+            <p class="text-pink-100/80 text-sm">15 neural pathways with adaptive learning</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Enhanced Stats Section -->
-  <section class="py-16 bg-white dark:bg-gray-800 shadow-xl relative -mt-8 mx-4 rounded-3xl z-20">
+  <!-- Enhanced Stats Section - Holographic Display -->
+  <section class="py-16 bg-gradient-to-br from-slate-900/80 to-black/80 backdrop-blur-sm shadow-2xl relative -mt-8 mx-4 rounded-3xl z-20 border border-cyan-500/30">
     <div class="container mx-auto px-6">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Your Learning Dashboard</h2>
-        <p class="text-gray-600 dark:text-gray-300">Track your progress across all DSA topics</p>
+        <h2 class="text-4xl font-bold text-cyan-300 mb-4 orbitron">
+          NEURAL INTERFACE DASHBOARD
+        </h2>
+        <p class="text-cyan-100/70">Monitor your cognitive enhancement progress</p>
       </div>
+      
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="text-center group hover:scale-105 transition-transform duration-300">
-          <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 class="text-4xl md:text-5xl font-bold text-white mb-2" id="total-problems">450</h3>
-            <p class="text-blue-100 font-semibold">Total Problems</p>
+          <div class="bg-gradient-to-br from-cyan-600/20 to-blue-600/20 rounded-2xl p-8 shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 border border-cyan-400/30 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-transparent animate-pulse"></div>
+            <h3 class="text-5xl md:text-6xl font-black text-cyan-300 mb-2 orbitron relative z-10" id="total-problems">450</h3>
+            <p class="text-cyan-100/80 font-semibold relative z-10">PROBLEM NODES</p>
           </div>
         </div>
+        
         <div class="text-center group hover:scale-105 transition-transform duration-300">
-          <div class="bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 class="text-4xl md:text-5xl font-bold text-white mb-2" id="total-topics">15</h3>
-            <p class="text-green-100 font-semibold">Topics Covered</p>
+          <div class="bg-gradient-to-br from-green-600/20 to-emerald-600/20 rounded-2xl p-8 shadow-lg hover:shadow-green-500/50 transition-all duration-300 border border-green-400/30 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-green-500/10 to-transparent animate-pulse animation-delay-1000"></div>
+            <h3 class="text-5xl md:text-6xl font-black text-green-300 mb-2 orbitron relative z-10" id="total-topics">15</h3>
+            <p class="text-green-100/80 font-semibold relative z-10">NEURAL SECTORS</p>
           </div>
         </div>
+        
         <div class="text-center group hover:scale-105 transition-transform duration-300">
-          <div class="bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 class="text-4xl md:text-5xl font-bold text-white mb-2" id="completion-percentage">0%</h3>
-            <p class="text-orange-100 font-semibold">Completed</p>
+          <div class="bg-gradient-to-br from-orange-600/20 to-red-600/20 rounded-2xl p-8 shadow-lg hover:shadow-orange-500/50 transition-all duration-300 border border-orange-400/30 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-transparent animate-pulse animation-delay-2000"></div>
+            <h3 class="text-5xl md:text-6xl font-black text-orange-300 mb-2 orbitron relative z-10" id="completion-percentage">0%</h3>
+            <p class="text-orange-100/80 font-semibold relative z-10">SYNC RATE</p>
           </div>
         </div>
+        
         <div class="text-center group hover:scale-105 transition-transform duration-300">
-          <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <h3 class="text-4xl md:text-5xl font-bold text-white mb-2" id="streak-count">0</h3>
-            <p class="text-purple-100 font-semibold">Day Streak</p>
+          <div class="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-2xl p-8 shadow-lg hover:shadow-purple-500/50 transition-all duration-300 border border-purple-400/30 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-transparent animate-pulse animation-delay-3000"></div>
+            <h3 class="text-5xl md:text-6xl font-black text-purple-300 mb-2 orbitron relative z-10" id="streak-count">0</h3>
+            <p class="text-purple-100/80 font-semibold relative z-10">CYCLE STREAK</p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Enhanced Topics Grid Section -->
   <section id="topics" class="py-20 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <span class="inline-block px-4 py-2 text-sm font-bold text-indigo-800 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4">
+        <span
+          class="inline-block px-4 py-2 text-sm font-bold text-indigo-800 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4">
           🎯 MASTER DSA CONCEPTS
         </span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">Practice Topics</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-          Systematically master every essential data structure and algorithm concept. Each topic is carefully curated 
-          with problems that progressively build your understanding and interview confidence.
+        <h2
+          class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
+          Practice Topics
+        </h2>
+        <p
+          class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          Systematically master every essential data structure and algorithm
+          concept. Each topic is carefully curated with problems that
+          progressively build your understanding and interview confidence.
         </p>
       </div>
 
       <!-- Topic difficulty legend -->
       <div class="flex justify-center mb-12">
-        <div class="flex flex-wrap gap-4 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
+        <div
+          class="flex flex-wrap gap-4 bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg">
           <div class="flex items-center gap-2">
             <div class="w-4 h-4 bg-green-500 rounded-full"></div>
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Beginner Friendly</span>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Beginner Friendly
+            </span>
           </div>
           <div class="flex items-center gap-2">
             <div class="w-4 h-4 bg-yellow-500 rounded-full"></div>
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Intermediate</span>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Intermediate
+            </span>
           </div>
           <div class="flex items-center gap-2">
             <div class="w-4 h-4 bg-red-500 rounded-full"></div>
-            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">Advanced</span>
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
+              Advanced
+            </span>
           </div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {{ range $index, $topic := slice "Array" "Matrix" "String" "Searching & Sorting" "Linked List" "Binary Trees" "Binary Search Trees" "Greedy" "Backtracking" "Stacks & Queues" "Heap" "Graph" "Trie" "Dynamic Programming" "Bit Manipulation" }}
-        {{ $slug := $topic | lower | replaceRE "[^a-z0-9]+" "-" }}
-        {{ if eq $topic "Binary Search Trees" }}{{ $slug = "bst" }}{{ end }}
-        {{ if eq $topic "Searching & Sorting" }}{{ $slug = "searching-sorting" }}{{ end }}
-        {{ if eq $topic "Stacks & Queues" }}{{ $slug = "stacks-queues" }}{{ end }}
-        {{ if eq $topic "Linked List" }}{{ $slug = "linked-list" }}{{ end }}
-        {{ if eq $topic "Binary Trees" }}{{ $slug = "binary-trees" }}{{ end }}
-        {{ if eq $topic "Dynamic Programming" }}{{ $slug = "dynamic-programming" }}{{ end }}
+        {{ range $index, $topic := slice "Array" "Matrix" "String" 
+        "Searching & Sorting" "Linked List" "Binary Trees" "Binary Search Trees" "Greedy"
+        "Backtracking" "Stacks & Queues" "Heap" "Graph" "Trie" "Dynamic Programming" "Bit Manipulation" }} {{ $slug := $topic | lower | replaceRE "[^a-z0-9]+" "-" }} {{ if eq $topic "Binary Search Trees" }}{{
+        $slug = "bst" }}{{ end }} {{ if eq $topic "Searching & Sorting" }}{{
+        $slug = "searching-sorting" }}{{ end }} {{ if eq $topic "Stacks & Queues" }}{{ $slug = "stacks-queues" }}{{ end }} 
+        {{ if eq $topic "Linked List" }}{{ $slug = "linked-list" }}{{ end }} 
+        {{ if eq $topic "Binary Trees" }}{{ $slug = "binary-trees" }}{{ end }} 
+        {{ if eq $topic "Dynamic Programming" }}{{ $slug = "dynamic-programming" }}{{ end }} 
         {{ if eq $topic "Bit Manipulation" }}{{ $slug = "bit-manipulation" }}{{ end }}
-        
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 relative group" data-topic-slug="{{ $slug }}">
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700 relative group"
+          data-topic-slug="{{ $slug }}">
           <!-- Progress indicator at top -->
-          <div class="h-2 bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 relative overflow-hidden">
-            <div class="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-700 ease-out" id="top-progress-bar-{{ $slug }}" style="width: 0%"></div>
+          <div
+            class="h-2 bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 relative overflow-hidden">
+            <div
+              class="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-700 ease-out"
+              id="top-progress-bar-{{ $slug }}"
+              style="width: 0%"></div>
           </div>
-          
+
           <!-- Topic icon and difficulty badge -->
           <div class="absolute top-4 right-4 z-10 flex flex-col gap-2">
-            <span class="inline-flex items-center justify-center px-3 py-1 text-xs font-bold leading-none rounded-full bg-white/90 dark:bg-gray-900/90 text-gray-800 dark:text-gray-200 shadow-lg backdrop-blur-sm border border-gray-200 dark:border-gray-600" id="count-completed-{{ $slug }}">0/0</span>
-            {{ if or (eq $topic "Array") (eq $topic "String") (eq $topic "Matrix") }}
-            <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">EASY</span>
-            {{ else if or (eq $topic "Linked List") (eq $topic "Binary Trees") (eq $topic "Stacks & Queues") (eq $topic "Heap") }}
-            <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">MED</span>
+            <span
+              class="inline-flex items-center justify-center px-3 py-1 text-xs font-bold leading-none rounded-full bg-white/90 dark:bg-gray-900/90 text-gray-800 dark:text-gray-200 shadow-lg backdrop-blur-sm border border-gray-200 dark:border-gray-600"
+              id="count-completed-{{ $slug }}">
+              0/0
+            </span>
+            {{ if or (eq $topic "Array") (eq $topic "String") (eq $topic
+            "Matrix") }}
+            <span
+              class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+              EASY
+            </span>
+            {{ else if or (eq $topic "Linked List") (eq $topic "Binary Trees")
+            (eq $topic "Stacks & Queues") (eq $topic "Heap") }}
+            <span
+              class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold rounded-full bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+              MED
+            </span>
             {{ else }}
-            <span class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">HARD</span>
+            <span
+              class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold rounded-full bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+              HARD
+            </span>
             {{ end }}
           </div>
 
           <div class="p-8">
             <!-- Topic icon and title -->
             <div class="flex items-start mb-6">
-              <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
+              <div
+                class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {{ if eq $topic "Array" }}
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/></svg>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
+                </svg>
                 {{ else if eq $topic "String" }}
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/></svg>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                </svg>
                 {{ else if eq $topic "Linked List" }}
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z"/></svg>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z" />
+                </svg>
                 {{ else if or (eq $topic "Binary Trees") (eq $topic "Binary Search Trees") }}
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"/></svg>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                </svg>
                 {{ else if eq $topic "Graph" }}
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+                </svg>
                 {{ else }}
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"/></svg>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"
+                    clip-rule="evenodd" />
+                </svg>
                 {{ end }}
               </div>
               <div class="flex-1">
-                <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{{ $topic }}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {{ if eq $topic "Array" }}Essential operations, sorting, and searching techniques{{ end }}
-                  {{ if eq $topic "String" }}Pattern matching, manipulation, and string algorithms{{ end }}
-                  {{ if eq $topic "Linked List" }}Pointer manipulation and list operations{{ end }}
-                  {{ if eq $topic "Binary Trees" }}Tree traversals and fundamental tree operations{{ end }}
-                  {{ if eq $topic "Graph" }}Graph traversals, shortest paths, and connectivity{{ end }}
-                  {{ if eq $topic "Dynamic Programming" }}Optimization problems and memoization techniques{{ end }}
-                  {{ if not (or (eq $topic "Array") (eq $topic "String") (eq $topic "Linked List") (eq $topic "Binary Trees") (eq $topic "Graph") (eq $topic "Dynamic Programming")) }}Core concepts and problem-solving patterns{{ end }}
+                <h3
+                  class="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  {{ $topic }}
+                </h3>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  {{ if eq $topic "Array" }}Essential operations, sorting, and
+                  searching techniques{{ end }} {{ if eq $topic "String"
+                  }}Pattern matching, manipulation, and string algorithms{{ end
+                  }} {{ if eq $topic "Linked List" }}Pointer manipulation and
+                  list operations{{ end }} {{ if eq $topic "Binary Trees" }}Tree
+                  traversals and fundamental tree operations{{ end }} {{ if eq
+                  $topic "Graph" }}Graph traversals, shortest paths, and
+                  connectivity{{ end }} {{ if eq $topic "Dynamic Programming"
+                  }}Optimization problems and memoization techniques{{ end }} {{
+                  if not (or (eq $topic "Array") (eq $topic "String") (eq $topic
+                  "Linked List") (eq $topic "Binary Trees") (eq $topic "Graph")
+                  (eq $topic "Dynamic Programming")) }}Core concepts and
+                  problem-solving patterns{{ end }}
                 </p>
               </div>
             </div>
@@ -187,19 +297,35 @@
             <!-- Progress section -->
             <div class="mb-6">
               <div class="flex justify-between items-center mb-3">
-                <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Progress</span>
-                <span class="text-sm font-bold text-blue-600 dark:text-blue-400" id="progress-{{ $slug }}">0%</span>
+                <span
+                  class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                  Progress
+                </span>
+                <span
+                  class="text-sm font-bold text-blue-600 dark:text-blue-400"
+                  id="progress-{{ $slug }}">
+                  0%
+                </span>
               </div>
-              <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
-                <div class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-700 ease-out transform" id="progress-bar-{{ $slug }}" style="width: 0%"></div>
+              <div
+                class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                <div
+                  class="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-700 ease-out transform"
+                  id="progress-bar-{{ $slug }}"
+                  style="width: 0%"></div>
               </div>
             </div>
 
             <!-- Action button -->
-            <a href="/{{ $slug }}/" class="block w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-center font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group-hover:shadow-2xl">
+            <a
+              href="/{{ $slug }}/"
+              class="block w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-center font-bold py-4 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group-hover:shadow-2xl">
               <span class="flex items-center justify-center gap-2">
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
                 </svg>
                 Start Practice
               </span>
@@ -215,10 +341,14 @@
   <section class="py-20 bg-white dark:bg-gray-800">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <span class="inline-block px-4 py-2 text-sm font-bold text-purple-800 dark:text-purple-300 bg-purple-100 dark:bg-purple-900 rounded-full mb-4">
+        <span
+          class="inline-block px-4 py-2 text-sm font-bold text-purple-800 dark:text-purple-300 bg-purple-100 dark:bg-purple-900 rounded-full mb-4">
           ✨ WHY CHOOSE DSA CRACKER
         </span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">Powerful Features</h2>
+        <h2
+          class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
+          Powerful Features
+        </h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           Everything you need to master DSA and ace your technical interviews
         </p>
@@ -226,228 +356,409 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Feature 1 -->
-        <div class="group bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 dark:border-gray-600">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+        <div
+          class="group bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-blue-100 dark:border-gray-600">
+          <div
+            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">Curated Problems</h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Handpicked collection of 450 DSA problems covering all essential concepts frequently asked in top tech company interviews.</p>
+          <h3
+            class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+            Curated Problems
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Handpicked collection of 450 DSA problems covering all essential
+            concepts frequently asked in top tech company interviews.
+          </p>
         </div>
 
         <!-- Feature 2 -->
-        <div class="group bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 dark:border-gray-600">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+        <div
+          class="group bg-gradient-to-br from-green-50 to-emerald-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-green-100 dark:border-gray-600">
+          <div
+            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">Progress Tracking</h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Visual dashboards, completion statistics, and streak tracking to keep you motivated throughout your learning journey.</p>
+          <h3
+            class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">
+            Progress Tracking
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Visual dashboards, completion statistics, and streak tracking to
+            keep you motivated throughout your learning journey.
+          </p>
         </div>
 
         <!-- Feature 3 -->
-        <div class="group bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 dark:border-gray-600">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/>
+        <div
+          class="group bg-gradient-to-br from-purple-50 to-violet-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-purple-100 dark:border-gray-600">
+          <div
+            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">Smart Organization</h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Bookmark important problems, add personal notes, and organize your study materials for efficient revision and review.</p>
+          <h3
+            class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
+            Smart Organization
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Bookmark important problems, add personal notes, and organize your
+            study materials for efficient revision and review.
+          </p>
         </div>
 
         <!-- Feature 4 -->
-        <div class="group bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-orange-100 dark:border-gray-600">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        <div
+          class="group bg-gradient-to-br from-orange-50 to-red-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-orange-100 dark:border-gray-600">
+          <div
+            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">Structured Learning</h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Follow a systematic approach with difficulty progression and topic-wise organization for optimal learning outcomes.</p>
+          <h3
+            class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors duration-300">
+            Structured Learning
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Follow a systematic approach with difficulty progression and
+            topic-wise organization for optimal learning outcomes.
+          </p>
         </div>
 
         <!-- Feature 5 -->
-        <div class="group bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-teal-100 dark:border-gray-600">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        <div
+          class="group bg-gradient-to-br from-teal-50 to-cyan-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-teal-100 dark:border-gray-600">
+          <div
+            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">Time Management</h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Practice with time constraints and develop efficient problem-solving strategies for real interview scenarios.</p>
+          <h3
+            class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors duration-300">
+            Time Management
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Practice with time constraints and develop efficient problem-solving
+            strategies for real interview scenarios.
+          </p>
         </div>
 
         <!-- Feature 6 -->
-        <div class="group bg-gradient-to-br from-pink-50 to-rose-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-pink-100 dark:border-gray-600">
-          <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+        <div
+          class="group bg-gradient-to-br from-pink-50 to-rose-100 dark:from-gray-700 dark:to-gray-800 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-pink-100 dark:border-gray-600">
+          <div
+            class="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
             </svg>
           </div>
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors duration-300">Solution Insights</h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">Detailed explanations, multiple solution approaches, and complexity analysis to deepen your understanding.</p>
+          <h3
+            class="text-2xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors duration-300">
+            Solution Insights
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Detailed explanations, multiple solution approaches, and complexity
+            analysis to deepen your understanding.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Success Stories Section -->
-  <section class="py-20 bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-gray-900 dark:to-gray-800">
+  <section
+    class="py-20 bg-gradient-to-br from-indigo-50 to-purple-100 dark:from-gray-900 dark:to-gray-800">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <span class="inline-block px-4 py-2 text-sm font-bold text-indigo-800 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4">
+        <span
+          class="inline-block px-4 py-2 text-sm font-bold text-indigo-800 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900 rounded-full mb-4">
           🏆 SUCCESS STORIES
         </span>
-        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">Join Thousands of Successful Developers</h2>
+        <h2
+          class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
+          Join Thousands of Successful Developers
+        </h2>
         <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Our systematic approach has helped developers land jobs at top tech companies
+          Our systematic approach has helped developers land jobs at top tech
+          companies
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
           <div class="flex items-center mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">G</div>
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              G
+            </div>
             <div class="ml-4">
               <h4 class="font-bold text-gray-800 dark:text-white">Google</h4>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Software Engineer</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Software Engineer
+              </p>
             </div>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 italic">"The structured approach and curated problems helped me nail my Google interviews. Highly recommended!"</p>
+          <p class="text-gray-600 dark:text-gray-300 italic">
+            "The structured approach and curated problems helped me nail my
+            Google interviews. Highly recommended!"
+          </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
           <div class="flex items-center mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg">M</div>
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              M
+            </div>
             <div class="ml-4">
               <h4 class="font-bold text-gray-800 dark:text-white">Microsoft</h4>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Senior Developer</p>
+              <p class="text-sm text-gray-600 dark:text-gray-400">
+                Senior Developer
+              </p>
             </div>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 italic">"Progress tracking kept me motivated. Completed all 450 problems and got my dream job at Microsoft!"</p>
+          <p class="text-gray-600 dark:text-gray-300 italic">
+            "Progress tracking kept me motivated. Completed all 450 problems and
+            got my dream job at Microsoft!"
+          </p>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
           <div class="flex items-center mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">A</div>
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              A
+            </div>
             <div class="ml-4">
               <h4 class="font-bold text-gray-800 dark:text-white">Amazon</h4>
               <p class="text-sm text-gray-600 dark:text-gray-400">SDE II</p>
             </div>
           </div>
-          <p class="text-gray-600 dark:text-gray-300 italic">"Perfect preparation for Amazon interviews. The difficulty progression made complex topics manageable."</p>
+          <p class="text-gray-600 dark:text-gray-300 italic">
+            "Perfect preparation for Amazon interviews. The difficulty
+            progression made complex topics manageable."
+          </p>
         </div>
       </div>
 
       <!-- Stats row -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6">
-          <h3 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">10K+</h3>
-          <p class="text-gray-600 dark:text-gray-300 font-medium">Active Users</p>
+        <div
+          class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6">
+          <h3
+            class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-2">
+            10K+
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 font-medium">
+            Active Users
+          </p>
         </div>
-        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6">
-          <h3 class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">95%</h3>
-          <p class="text-gray-600 dark:text-gray-300 font-medium">Success Rate</p>
+        <div
+          class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6">
+          <h3
+            class="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+            95%
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 font-medium">
+            Success Rate
+          </p>
         </div>
-        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6">
-          <h3 class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">500+</h3>
+        <div
+          class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6">
+          <h3
+            class="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+            500+
+          </h3>
           <p class="text-gray-600 dark:text-gray-300 font-medium">Job Offers</p>
         </div>
-        <div class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6">
-          <h3 class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">4.9★</h3>
-          <p class="text-gray-600 dark:text-gray-300 font-medium">User Rating</p>
+        <div
+          class="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6">
+          <h3
+            class="text-3xl font-bold text-orange-600 dark:text-orange-400 mb-2">
+            4.9★
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300 font-medium">
+            User Rating
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Enhanced CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 text-white relative overflow-hidden">
+  <section
+    class="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 text-white relative overflow-hidden">
     <!-- Animated background -->
     <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-1/4 left-1/3 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-      <div class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse animation-delay-4000"></div>
+      <div
+        class="absolute top-1/4 left-1/3 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
+      <div
+        class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse animation-delay-4000"></div>
     </div>
 
     <div class="container mx-auto px-4 text-center relative z-10">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
+        <h2
+          class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
           Ready to Crack Your Next Interview?
         </h2>
-        <p class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Join thousands of developers who have successfully landed their dream jobs at top tech companies. 
-          Start your systematic DSA preparation journey today!
+        <p
+          class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+          Join thousands of developers who have successfully landed their dream
+          jobs at top tech companies. Start your systematic DSA preparation
+          journey today!
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-          <a href="#topics" class="group bg-white text-indigo-700 hover:bg-blue-50 font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-white/25 hover:scale-105 transform flex items-center gap-3">
-            <svg class="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+        <div
+          class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+          <a
+            href="#topics"
+            class="group bg-white text-indigo-700 hover:bg-blue-50 font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-white/25 hover:scale-105 transform flex items-center gap-3">
+            <svg
+              class="w-6 h-6 group-hover:rotate-12 transition-transform duration-300"
+              fill="currentColor"
+              viewBox="0 0 20 20">
+              <path
+                fill-rule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clip-rule="evenodd" />
             </svg>
             🚀 Start Your Journey Now
           </a>
           <div class="flex items-center gap-2 text-blue-100">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd" />
             </svg>
             <span class="font-semibold">100% Free • No Sign-up Required</span>
           </div>
         </div>
 
         <!-- Final encouragement -->
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-          <h3 class="text-2xl font-bold mb-4">🎯 Your Success Journey Starts Here</h3>
+        <div
+          class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+          <h3 class="text-2xl font-bold mb-4">
+            🎯 Your Success Journey Starts Here
+          </h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
             <div class="flex flex-col items-center">
-              <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
                 <span class="text-2xl">1️⃣</span>
               </div>
               <h4 class="font-bold mb-2">Choose Your Topic</h4>
-              <p class="text-blue-100 text-sm">Start with any DSA topic that interests you most</p>
+              <p class="text-blue-100 text-sm">
+                Start with any DSA topic that interests you most
+              </p>
             </div>
             <div class="flex flex-col items-center">
-              <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
                 <span class="text-2xl">2️⃣</span>
               </div>
               <h4 class="font-bold mb-2">Practice Consistently</h4>
-              <p class="text-blue-100 text-sm">Solve problems daily and track your progress</p>
+              <p class="text-blue-100 text-sm">
+                Solve problems daily and track your progress
+              </p>
             </div>
             <div class="flex flex-col items-center">
-              <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
+              <div
+                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
                 <span class="text-2xl">3️⃣</span>
               </div>
               <h4 class="font-bold mb-2">Ace Your Interviews</h4>
-              <p class="text-blue-100 text-sm">Apply your knowledge and land your dream job</p>
+              <p class="text-blue-100 text-sm">
+                Apply your knowledge and land your dream job
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
   </section>
+
 </main>
 
 <!-- Topic problem counts -->
 <script type="application/json" id="topic-problem-counts">
-{
-  "array": 36,
-  "matrix": 10,
-  "string": 43,
-  "searching-sorting": 36,
-  "linked-list": 36,
-  "binary-trees": 35,
-  "bst": 22,
-  "greedy": 35,
-  "backtracking": 19,
-  "stacks-queues": 38,
-  "heap": 18,
-  "graph": 44,
-  "trie": 6,
-  "dynamic-programming": 60,
-  "bit-manipulation": 10
-}
+  {
+    "array": 36,
+    "matrix": 10,
+    "string": 43,
+    "searching-sorting": 36,
+    "linked-list": 36,
+    "binary-trees": 35,
+    "bst": 22,
+    "greedy": 35,
+    "backtracking": 19,
+    "stacks-queues": 38,
+    "heap": 18,
+    "graph": 44,
+    "trie": 6,
+    "dynamic-programming": 60,
+    "bit-manipulation": 10
+  }
 </script>
 
 <script>
@@ -651,7 +962,7 @@
       .animate-fade-in-up {
         animation: fadeInUp 0.6s ease-out forwards;
       }
-      
+
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -662,17 +973,25 @@
           transform: translateY(0);
         }
       }
-      
+
       .animation-delay-2000 {
         animation-delay: 2s;
       }
-      
+
       .animation-delay-4000 {
         animation-delay: 4s;
       }
     `;
     document.head.appendChild(style);
   });
-
 </script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const target = document.getElementById('topics');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' }); // or "auto"
+    }
+  });
+</script>
+
 {{ end }}

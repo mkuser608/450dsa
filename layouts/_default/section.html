@@ -1,84 +1,110 @@
 {{ define "main" }}
-<div class="container mx-auto px-4 py-8">
-  <div class="max-w-5xl mx-auto">
+<div class="container mx-auto px-4 py-8 min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+  <!-- Animated Background Elements -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+  </div>
+
+  <!-- Grid Pattern Overlay -->
+  <div class="fixed inset-0 opacity-5 pointer-events-none" style="background-image: linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
     <!-- Header Section with Back Button and Title -->
-    <div class="flex items-center mb-8">
+    <div class="flex items-center mb-8 backdrop-blur-sm bg-slate-800/30 rounded-2xl p-6 border border-cyan-500/20 shadow-2xl">
       <a href="/"
-        class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 flex items-center group transition-all duration-300">
+        class="text-cyan-400 hover:text-cyan-300 flex items-center group transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/25 px-4 py-2 rounded-lg border border-cyan-500/30 hover:border-cyan-400/50 bg-slate-800/50">
         <svg xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 mr-1 transform group-hover:-translate-x-1 transition-transform duration-300"
+          class="h-5 w-5 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300"
           viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd"
             d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
             clip-rule="evenodd" />
         </svg>
-        <span class="font-medium">Back to Topics</span>
+        <span class="font-medium tracking-wide">BACK TO TOPICS</span>
       </a>
-      <div class="h-6 border-l border-gray-300 dark:border-gray-700 mx-4"></div>
-      <h1 class="text-3xl font-bold text-gray-800 dark:text-primary-50">{{ .Title }}</h1>
+      <div class="h-8 border-l border-cyan-500/30 mx-6"></div>
+      <h1 class="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent tracking-wide">{{ .Title }}</h1>
+      <div class="ml-auto">
+        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center shadow-lg shadow-cyan-500/50">
+          <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Progress Card -->
-    <div
-      class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 mb-8 transform hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-      <h2 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Your Progress</h2>
-
-      <div class="flex justify-between items-center mb-2">
-        <span class="text-gray-700 dark:text-gray-300 font-medium">Progress</span>
-        <span class="text-primary-600 dark:text-primary-400 font-bold" id="progress-percentage">0%</span>
-      </div>
-      <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-6 overflow-hidden">
-        <div class="bg-primary-600 h-3 rounded-full transition-all duration-500 ease-out" id="progress-bar"
-          style="width: 0%"></div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center">
-          <div class="text-sm text-gray-500 dark:text-gray-400">Total Problems</div>
-          <div class="text-2xl font-bold text-gray-800 dark:text-white mt-1" id="total-problems">{{ if .Params.problems
-            }}{{ len .Params.problems }}{{ else }}0{{ end }}</div>
+    <div class="glass-morphism rounded-3xl p-8 mb-8 border border-cyan-500/20 shadow-2xl shadow-cyan-500/10 hover:shadow-cyan-500/20 transition-all duration-500 group">
+      <div class="flex items-center mb-6">
+        <div class="w-3 h-3 bg-cyan-400 rounded-full mr-3 animate-pulse"></div>
+        <h2 class="text-2xl font-bold text-white tracking-wide">MISSION PROGRESS</h2>
+        <div class="ml-auto flex space-x-2">
+          <div class="w-2 h-8 bg-gradient-to-t from-cyan-500 to-transparent rounded-full opacity-60 animate-pulse"></div>
+          <div class="w-2 h-6 bg-gradient-to-t from-blue-500 to-transparent rounded-full opacity-40 animate-pulse animation-delay-1000"></div>
+          <div class="w-2 h-4 bg-gradient-to-t from-purple-500 to-transparent rounded-full opacity-80 animate-pulse animation-delay-2000"></div>
         </div>
-        <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 text-center">
-          <div class="text-sm text-gray-500 dark:text-gray-400">Completed</div>
-          <div class="text-2xl font-bold text-green-500 dark:text-green-400 mt-1" id="completed-problems">0</div>
+      </div>
+
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-cyan-200 font-medium tracking-wide">COMPLETION STATUS</span>
+        <span class="text-cyan-400 font-bold text-xl" id="progress-percentage">0%</span>
+      </div>
+      <div class="w-full bg-slate-700/50 rounded-full h-4 mb-8 overflow-hidden border border-cyan-500/20">
+        <div class="bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 h-4 rounded-full transition-all duration-1000 ease-out shadow-lg shadow-cyan-500/50 relative" id="progress-bar" style="width: 0%">
+          <div class="absolute inset-0 bg-white/20 rounded-full animate-pulse"></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div class="glass-panel rounded-2xl p-6 text-center border border-blue-500/20 hover:border-blue-400/40 transition-all duration-300 group">
+          <div class="text-sm text-cyan-300 tracking-wider mb-2">TOTAL MISSIONS</div>
+          <div class="text-3xl font-bold text-white mt-1 group-hover:scale-110 transition-transform duration-300" id="total-problems">{{ if .Params.problems }}{{ len .Params.problems }}{{ else }}0{{ end }}</div>
+          <div class="w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-3 opacity-60"></div>
+        </div>
+        <div class="glass-panel rounded-2xl p-6 text-center border border-green-500/20 hover:border-green-400/40 transition-all duration-300 group">
+          <div class="text-sm text-cyan-300 tracking-wider mb-2">COMPLETED</div>
+          <div class="text-3xl font-bold text-green-400 mt-1 group-hover:scale-110 transition-transform duration-300" id="completed-problems">0</div>
+          <div class="w-full h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-3 opacity-60"></div>
         </div>
         <div class="flex justify-center">
           <button id="pick-random"
-            class="bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg text-center transition duration-300 flex items-center shadow-md hover:shadow-lg transform hover:-translate-y-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            class="neon-button bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 text-white font-bold py-4 px-8 rounded-2xl text-center transition-all duration-300 flex items-center shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-cyan-500/30 border border-purple-500/30 hover:border-cyan-400/50 transform hover:scale-105 hover:-translate-y-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
                 d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
                 clip-rule="evenodd" />
             </svg>
-            Pick Random Problem
+            RANDOM MISSION
           </button>
         </div>
       </div>
     </div>
 
     <!-- Search and Filter Bar -->
-    <div class="mb-6 flex flex-col md:flex-row gap-4">
+    <div class="mb-8 flex flex-col md:flex-row gap-6">
       <div class="relative flex-grow">
-        <input type="text" id="search-input" placeholder="Search problems or notes..."
-          class="w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-800 dark:text-white pl-10">
-        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+        <input type="text" id="search-input" placeholder="SCAN FOR MISSIONS OR DATA LOGS..."
+          class="w-full px-6 py-4 glass-morphism border border-cyan-500/30 rounded-2xl focus:outline-none focus:border-cyan-400 focus:shadow-lg focus:shadow-cyan-500/25 text-white placeholder-cyan-300/70 pl-14 tracking-wide transition-all duration-300">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-cyan-400" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
               d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
               clip-rule="evenodd" />
           </svg>
         </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-4">
+          <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+        </div>
       </div>
-      <div class="flex gap-2">
+      <div class="flex gap-3">
         <button id="filter-all"
-          class="filter-button active px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg font-medium transition-all duration-200">All</button>
+          class="filter-button active cyber-button px-6 py-3 glass-morphism border border-cyan-500/30 text-cyan-200 rounded-xl font-medium transition-all duration-300 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/25 tracking-wide">ALL</button>
         <button id="filter-todo"
-          class="filter-button px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg font-medium transition-all duration-200">To
-          Do</button>
+          class="filter-button cyber-button px-6 py-3 glass-morphism border border-blue-500/30 text-blue-200 rounded-xl font-medium transition-all duration-300 hover:border-blue-400/50 hover:shadow-lg hover:shadow-blue-500/25 tracking-wide">PENDING</button>
         <button id="filter-done"
-          class="filter-button px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg font-medium transition-all duration-200">Done</button>
+          class="filter-button cyber-button px-6 py-3 glass-morphism border border-green-500/30 text-green-200 rounded-xl font-medium transition-all duration-300 hover:border-green-400/50 hover:shadow-lg hover:shadow-green-500/25 tracking-wide">COMPLETE</button>
         <button id="filter-bookmarked"
-          class="filter-button px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg font-medium transition-all duration-200">
+          class="filter-button cyber-button px-6 py-3 glass-morphism border border-yellow-500/30 text-yellow-200 rounded-xl font-medium transition-all duration-300 hover:border-yellow-400/50 hover:shadow-lg hover:shadow-yellow-500/25">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
           </svg>
@@ -88,40 +114,38 @@
 
     <!-- Problem List -->
     {{ if .Params.problems }}
-    <div
-      class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+    <div class="glass-morphism rounded-3xl overflow-hidden border border-cyan-500/20 shadow-2xl shadow-cyan-500/10">
       <div class="overflow-x-auto">
-        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-          <thead class="bg-gray-50 dark:bg-gray-900">
+        <table class="min-w-full">
+          <thead class="glass-panel border-b border-cyan-500/20">
             <tr>
-              <th scope="col"
-                class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Status</th>
-              <th scope="col"
-                class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Problem</th>
-              <th scope="col"
-                class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Bookmark</th>
-              <th scope="col"
-                class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Notes</th>
-              <th scope="col"
-                class="px-6 py-4 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Actions</th>
+              <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
+                STATUS
+              </th>
+              <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
+                MISSION BRIEF
+              </th>
+              <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
+                PRIORITY
+              </th>
+              <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
+                DATA LOGS
+              </th>
+              <th scope="col" class="px-8 py-6 text-left text-sm font-bold text-cyan-300 uppercase tracking-wider">
+                ACCESS
+              </th>
             </tr>
           </thead>
-          <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700" id="problems-table">
+          <tbody class="divide-y divide-cyan-500/10" id="problems-table">
             {{ range $index, $problem := .Params.problems }}
             <tr data-index="{{ $index }}" data-title="{{ $problem.title }}"
-              class="hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors">
-              <td class="px-6 py-4 whitespace-nowrap">
+              class="hover:bg-slate-800/30 transition-all duration-300 group border-l-4 border-transparent hover:border-cyan-500/50">
+              <td class="px-8 py-6 whitespace-nowrap">
                 <div class="flex items-center">
                   <label class="inline-flex items-center cursor-pointer">
                     <input type="checkbox" class="problem-checkbox sr-only" data-problem-id="{{ $index }}">
-                    <div
-                      class="checkbox-toggle w-5 h-5 border-2 border-gray-300 dark:border-gray-600 rounded flex items-center justify-center transition-all duration-200">
-                      <svg class="w-3 h-3 text-white opacity-0" viewBox="0 0 20 20" fill="currentColor">
+                    <div class="checkbox-toggle w-6 h-6 border-2 border-cyan-500/50 rounded-lg flex items-center justify-center transition-all duration-300 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/25 bg-slate-800/50">
+                      <svg class="w-4 h-4 text-cyan-400 opacity-0 transition-opacity duration-200" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd"
                           d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                           clip-rule="evenodd" />
@@ -130,25 +154,20 @@
                   </label>
                 </div>
               </td>
-              <td class="px-6 py-4">
-                <div class="text-sm font-medium text-gray-900 dark:text-white problem-title">{{ $problem.title }}</div>
+              <td class="px-8 py-6">
+                <div class="text-base font-medium text-white problem-title tracking-wide group-hover:text-cyan-200 transition-colors duration-300">{{ $problem.title }}</div>
+                <div class="w-0 h-0.5 bg-gradient-to-r from-cyan-500 to-transparent group-hover:w-full transition-all duration-500"></div>
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <button
-                  class="bookmark-button focus:outline-none transform transition-transform duration-200 hover:scale-110"
-                  data-problem-id="{{ $index }}">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
-                    fill="currentColor">
+              <td class="px-8 py-6 whitespace-nowrap">
+                <button class="bookmark-button focus:outline-none transform transition-all duration-300 hover:scale-125 hover:rotate-12 p-2 rounded-lg hover:bg-slate-700/50" data-problem-id="{{ $index }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 hover:text-yellow-400 transition-colors duration-300" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
                   </svg>
                 </button>
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <button
-                  class="notes-button focus:outline-none transform transition-transform duration-200 hover:scale-110"
-                  data-problem-id="{{ $index }}">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
-                    fill="currentColor">
+              <td class="px-8 py-6 whitespace-nowrap">
+                <button class="notes-button focus:outline-none transform transition-all duration-300 hover:scale-125 p-2 rounded-lg hover:bg-slate-700/50" data-problem-id="{{ $index }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-500 hover:text-cyan-400 transition-colors duration-300" viewBox="0 0 20 20" fill="currentColor">
                     <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
                     <path fill-rule="evenodd"
                       d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
@@ -156,26 +175,22 @@
                   </svg>
                 </button>
               </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="flex space-x-2">
+              <td class="px-8 py-6 whitespace-nowrap">
+                <div class="flex space-x-3">
                   <a href="{{ $problem.url }}" target="_blank"
-                    class="inline-flex items-center px-3 py-1 rounded-md bg-primary-50 text-primary-700 hover:bg-primary-100 dark:bg-primary-900/20 dark:text-primary-400 dark:hover:bg-primary-900/40 transition-colors duration-200">
-                    <span class="text-xs font-medium">GFG</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" viewBox="0 0 20 20"
-                      fill="currentColor">
-                      <path
-                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    class="inline-flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-purple-600/20 to-cyan-600/20 text-cyan-300 hover:from-purple-500/30 hover:to-cyan-500/30 transition-all duration-300 border border-purple-500/30 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/25 transform hover:scale-105">
+                    <span class="text-sm font-bold tracking-wider">GFG</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                       <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                     </svg>
                   </a>
                   {{ if $problem.url2 }}
                   <a href="{{ $problem.url2 }}" target="_blank"
-                    class="inline-flex items-center px-3 py-1 rounded-md bg-blue-50 text-blue-700 hover:bg-blue-100 dark:bg-blue-900/20 dark:text-blue-400 dark:hover:bg-blue-900/40 transition-colors duration-200">
-                    <span class="text-xs font-medium">CN</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-1" viewBox="0 0 20 20"
-                      fill="currentColor">
-                      <path
-                        d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
+                    class="inline-flex items-center px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600/20 to-indigo-600/20 text-blue-300 hover:from-blue-500/30 hover:to-indigo-500/30 transition-all duration-300 border border-blue-500/30 hover:border-indigo-400/50 hover:shadow-lg hover:shadow-blue-500/25 transform hover:scale-105">
+                    <span class="text-sm font-bold tracking-wider">CN</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
                       <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
                     </svg>
                   </a>
@@ -189,56 +204,65 @@
       </div>
     </div>
     {{ else }}
-    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-12 text-center">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none"
-        viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-      <p class="text-gray-700 dark:text-gray-300 text-lg">No problems found for this topic.</p>
+    <div class="glass-morphism rounded-3xl p-16 text-center border border-cyan-500/20 shadow-2xl">
+      <div class="mb-8">
+        <div class="w-24 h-24 mx-auto bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center shadow-2xl shadow-cyan-500/50">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+      </div>
+      <p class="text-cyan-200 text-xl mb-8 tracking-wide">NO MISSIONS DETECTED IN THIS SECTOR</p>
       <a href="/"
-        class="mt-4 inline-block bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded text-center transition duration-300">Return
-        to Topics</a>
+        class="inline-block neon-button bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 shadow-lg shadow-cyan-500/25 hover:shadow-xl border border-cyan-500/30 transform hover:scale-105 tracking-wide">RETURN TO COMMAND CENTER</a>
     </div>
     {{ end }}
 
     <!-- Notes Modal -->
     <div id="notes-modal"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden backdrop-blur-sm">
+      class="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50 hidden">
       <div
-        class="bg-white dark:bg-gray-800 rounded-xl shadow-xl max-w-lg w-full mx-4 transform transition-all opacity-0 scale-95"
+        class="glass-morphism rounded-3xl shadow-2xl max-w-2xl w-full mx-4 transform transition-all opacity-0 scale-95 border border-cyan-500/30"
         id="modal-content">
-        <div class="p-5 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white" id="notes-modal-title">Problem Notes</h3>
+        <div class="p-8 border-b border-cyan-500/20 flex justify-between items-center">
+          <h3 class="text-2xl font-bold text-white tracking-wide" id="notes-modal-title">DATA LOG ENTRY</h3>
           <button id="notes-close"
-            class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            class="text-cyan-400 hover:text-cyan-300 focus:outline-none transform hover:scale-110 transition-all duration-300 p-2 rounded-lg hover:bg-slate-700/50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                 clip-rule="evenodd" />
             </svg>
           </button>
         </div>
-        <div class="p-5">
+        <div class="p-8">
           <textarea id="notes-content"
-            class="w-full h-48 px-3 py-2 text-gray-700 dark:text-white border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 resize-none"
-            placeholder="Add your notes here..."></textarea>
+            class="w-full h-48 px-4 py-3 text-white glass-morphism border border-cyan-500/30 rounded-2xl focus:outline-none focus:border-cyan-400 focus:shadow-lg focus:shadow-cyan-500/25 resize-none placeholder-cyan-300/50 tracking-wide"
+            placeholder="ENTER MISSION DATA AND ANALYSIS..."></textarea>
         </div>
-        <div class="p-5 border-t border-gray-200 dark:border-gray-700 flex justify-end space-x-3">
+        <div class="p-8 border-t border-cyan-500/20 flex justify-end space-x-4">
           <button id="notes-cancel"
-            class="px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-800 dark:text-white rounded-lg transition-colors">Cancel</button>
+            class="px-6 py-3 glass-morphism border border-slate-500/30 text-slate-300 rounded-xl hover:border-slate-400/50 hover:text-white transition-all duration-300 font-medium tracking-wide">CANCEL</button>
           <button id="notes-save"
-            class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            class="px-6 py-3 neon-button bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white rounded-xl transition-all duration-300 flex items-center font-bold border border-cyan-500/30 shadow-lg shadow-cyan-500/25 tracking-wide">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                 clip-rule="evenodd" />
             </svg>
-            Save Notes
+            SAVE DATA
           </button>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Floating particles -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-75"></div>
+    <div class="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping opacity-50 animation-delay-3000"></div>
+    <div class="absolute top-1/2 right-1/3 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-60 animation-delay-1500"></div>
   </div>
 </div>
 
@@ -706,89 +730,214 @@
 </script>
 
 <style>
-  /* Custom animation */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
+  /* Cyberpunk Sci-Fi Custom Animations */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
     }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
     }
   }
 
-  .highlighted-row {
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .animation-delay-1500 {
+    animation-delay: 1.5s;
+  }
+
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+
+  /* Glass Morphism Effects */
+  .glass-morphism {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-panel {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Neon Button Effects */
+  .neon-button {
     position: relative;
+    overflow: hidden;
   }
 
-  .highlighted-row::after {
+  .neon-button::before {
     content: '';
     position: absolute;
-    left: 0;
     top: 0;
+    left: -100%;
+    width: 100%;
     height: 100%;
-    width: 4px;
-    background-color: #f59e0b;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
   }
 
-  /* Custom checkbox styling */
-  .checkbox-toggle.bg-primary-600 {
-    border-color: transparent;
+  .neon-button:hover::before {
+    left: 100%;
   }
 
-  /* Active filter button highlighting */
+  /* Cyber Button Effects */
+  .cyber-button {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .cyber-button:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Checkbox Toggle Custom Styling */
+  .checkbox-toggle {
+    transition: all 0.3s ease;
+  }
+
+  .problem-checkbox:checked + .checkbox-toggle {
+    background: linear-gradient(135deg, #10b981, #059669);
+    border-color: #10b981;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  }
+
+  /* Active Filter Button */
   .filter-button.active {
-    font-weight: 500;
+    background: rgba(6, 182, 212, 0.1);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
   }
 
-  /* Improved focus styles */
-  *:focus-visible {
-    outline: 2px solid rgb(79, 70, 229);
-    outline-offset: 2px;
+  /* Row Highlight Effect */
+  .highlighted-row {
+    position: relative;
+    animation: highlightPulse 2s ease-in-out;
   }
 
-  /* Smooth transitions */
-  .problem-title {
-    transition: all 0.2s ease;
+  @keyframes highlightPulse {
+    0%, 100% {
+      background-color: rgba(147, 51, 234, 0.1);
+    }
+    50% {
+      background-color: rgba(147, 51, 234, 0.3);
+    }
   }
 
-  /* Custom scrollbar */
+  /* Modal Animation */
+  #modal-content {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: rgba(229, 231, 235, 0.5);
+    background: rgba(30, 41, 59, 0.5);
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgba(156, 163, 175, 0.5);
+    background: rgba(6, 182, 212, 0.5);
     border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(107, 114, 128, 0.5);
+    background: rgba(6, 182, 212, 0.7);
   }
 
-  .dark ::-webkit-scrollbar-track {
-    background: rgba(55, 65, 81, 0.5);
+  /* Notification Toast */
+  .notification-toast {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
-  .dark ::-webkit-scrollbar-thumb {
-    background: rgba(75, 85, 99, 0.5);
+  /* Focus Styles */
+  *:focus-visible {
+    outline: 2px solid rgb(6, 182, 212);
+    outline-offset: 2px;
+    border-radius: 8px;
   }
 
-  .dark ::-webkit-scrollbar-thumb:hover {
-    background: rgba(107, 114, 128, 0.5);
+  /* Hover Effects for Table Rows */
+  #problems-table tr:hover {
+    background: rgba(30, 41, 59, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
-  /* Modal animation */
-  #modal-content {
-    transition: opacity 0.3s ease, transform 0.3s ease;
+  /* Search Input Glow Effect */
+  #search-input:focus {
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.3);
+  }
+
+  /* Progress Bar Glow */
+  #progress-bar {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  }
+
+  /* Button Hover Glow Effects */
+  .neon-button:hover,
+  .cyber-button:hover {
+    box-shadow: 0 5px 25px rgba(6, 182, 212, 0.4);
+  }
+
+  /* Link Button Hover Effects */
+  a[href]:hover {
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  /* Floating Particles Animation */
+  .animate-ping {
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .glass-morphism {
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+    }
+    
+    .notification-toast {
+      bottom: 1rem;
+      right: 1rem;
+      left: 1rem;
+      max-width: calc(100vw - 2rem);
+    }
   }
 </style>
 {{ end }}
