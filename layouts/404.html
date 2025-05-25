@@ -1,0 +1,289 @@
+{{ define "main" }}
+<div class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="mt-8 text-center">
+      <div class="relative mb-8">
+        <h1 class="text-8xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-400 to-cyan-300 animate-pulse">
+          404
+        </h1>
+        <div class="absolute inset-0 text-8xl md:text-9xl font-bold text-purple-500 opacity-20 animate-ping">
+          404
+        </div>
+      </div>
+    </div>
+    
+    <!-- Terminal Window -->
+    <div class="bg-slate-900 rounded-lg shadow-2xl border border-cyan-500/30 overflow-hidden">
+      <!-- Terminal Header -->
+      <div class="flex items-center px-4 py-2 bg-gradient-to-r from-slate-800 via-purple-800 to-slate-800 border-b border-cyan-500">
+        <div class="flex space-x-2">
+          <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+          <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+          <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+        </div>
+        <div class="ml-4 text-cyan-300 text-sm font-mono">
+          DSA450_Navigator.cpp - Debugging Session
+        </div>
+      </div>
+
+      <!-- Terminal Content -->
+      <div class="p-6 font-mono text-sm">
+        <div id="terminal-content" class="text-cyan-300 min-h-96">
+          <!-- Content will be written here by JavaScript -->
+        </div>
+        <span id="cursor" class="bg-cyan-400 text-cyan-400 animate-pulse">█</span>
+      </div>
+    </div>
+
+    <!-- Terminal Output Section -->
+    <div class="mt-8">
+      <div id="output-section" class="hidden">
+        <div class="bg-slate-900 rounded-lg shadow-2xl border border-green-500/30 overflow-hidden">
+          <!-- Output Header -->
+          <div class="flex items-center px-4 py-2 bg-gradient-to-r from-slate-800 via-green-800 to-slate-800 border-b border-green-500">
+            <div class="flex space-x-2">
+              <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+              <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-300 rounded-full"></div>
+            </div>
+            <div class="ml-4 text-green-300 text-sm font-mono">
+              Output: program_suggestions.exe
+            </div>
+          </div>
+
+          <!-- Output Content -->
+          <div class="p-6 font-mono text-sm">
+            <div class="text-green-300">
+              <div class="mb-4">
+                <span class="text-yellow-400">$</span> ./generate_suggestions --mode=beginner_friendly
+              </div>
+              <div class="mb-2 text-green-400">✓ Compilation successful</div>
+              <div class="mb-2 text-green-400">✓ Memory allocated: 450 problems</div>
+              <div class="mb-4 text-green-400">✓ Categories loaded: Arrays, Strings, Trees, Graphs...</div>
+              
+              <div class="mb-4 text-cyan-300">
+                <div>========================================</div>
+                <div>🚀 DSA450 PROBLEM RECOMMENDATIONS 🚀</div>
+                <div>========================================</div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-xs">
+                <div class="bg-slate-800/50 p-3 rounded border border-green-500/30">
+                  <div class="text-yellow-300 font-semibold mb-1">► Array[0]: Two Pointer</div>
+                  <div class="text-green-300/80">status: RECOMMENDED</div>
+                  <div class="text-green-300/80">difficulty: MEDIUM</div>
+                  <div class="text-green-300/80">success_rate: 87%</div>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded border border-green-500/30">
+                  <div class="text-yellow-300 font-semibold mb-1">► String[1]: Pattern Match</div>
+                  <div class="text-green-300/80">status: TRENDING</div>
+                  <div class="text-green-300/80">difficulty: HARD</div>
+                  <div class="text-green-300/80">success_rate: 73%</div>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded border border-green-500/30">
+                  <div class="text-yellow-300 font-semibold mb-1">► Tree[2]: BST Operations</div>
+                  <div class="text-green-300/80">status: POPULAR</div>
+                  <div class="text-green-300/80">difficulty: MEDIUM</div>
+                  <div class="text-green-300/80">success_rate: 91%</div>
+                </div>
+                <div class="bg-slate-800/50 p-3 rounded border border-green-500/30">
+                  <div class="text-yellow-300 font-semibold mb-1">► Graph[3]: Shortest Path</div>
+                  <div class="text-green-300/80">status: CHALLENGING</div>
+                  <div class="text-green-300/80">difficulty: HARD</div>
+                  <div class="text-green-300/80">success_rate: 65%</div>
+                </div>
+              </div>
+
+              <div class="mb-4 text-cyan-300">
+                <div>Process completed with exit code: 0</div>
+                <div class="text-yellow-400">Ready to start coding? Press ENTER...</div>
+              </div>
+
+              <button id="start-coding" class="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-500 hover:to-blue-500 text-white px-6 py-3 rounded-lg font-bold transform hover:scale-105 transition-all duration-300 shadow-2xl border border-green-400">
+                <span class="flex items-center">
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                  </svg>
+                  ENTER >> START_CODING_SESSION()
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 404 Error Popup Modal -->
+<div id="error-popup" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50">
+  <div class="bg-slate-900 border-2 border-red-500 rounded-lg p-6 max-w-md mx-4 shadow-2xl">
+    <div class="text-center">
+      <div class="text-6xl text-red-500 mb-4">⚠️</div>
+      <h2 class="text-2xl font-bold text-red-400 mb-2 font-mono">FATAL ERROR</h2>
+      <div class="bg-slate-800 p-4 rounded border border-red-500/30 mb-4 font-mono text-sm">
+        <div class="text-red-300">Error Code: <span class="text-red-500 font-bold">404</span></div>
+        <div class="text-red-300">Status: <span class="text-red-500">PAGE_NOT_FOUND</span></div>
+        <div class="text-red-300">Message: <span class="text-red-500">"Requested resource does not exist"</span></div>
+        <div class="text-red-300">Location: <span class="text-red-500">NULL_POINTER</span></div>
+      </div>
+      <div class="text-yellow-300 text-sm mb-4 font-mono">
+        >> Suggestion: Navigate to available resources
+      </div>
+      <div class="flex gap-3">
+        <button id="close-popup" class="bg-red-600 hover:bg-red-500 text-white px-4 py-2 rounded font-mono text-sm transition-colors">
+          CLOSE()
+        </button>
+        <a href="{{ .Site.Home.RelPermalink }}" class="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded font-mono text-sm transition-colors">
+          HOME.navigate()
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const terminalContent = document.getElementById('terminal-content');
+  const cursor = document.getElementById('cursor');
+  const outputSection = document.getElementById('output-section');
+  const errorPopup = document.getElementById('error-popup');
+  const closePopup = document.getElementById('close-popup');
+  const startCoding = document.getElementById('start-coding');
+
+  const codeLines = [
+    '$ ./search --target="page" --location="{{ .Page.Permalink }}"',
+    '',
+    '⚠️  SEARCH INITIATED...',
+    '🔍 Scanning file system...',
+    '📋 Checking routes...',
+    '',
+    '  searchPage(path) {',
+    '    console.log(`Searching: ${path}`);',
+    '    if (!this.exists(path)) {',
+    '      throw new Error("404_NOT_FOUND");',
+    '    }',
+    '  }',
+    '',
+    '  handleError() {',
+    '    this.showErrorPopup();',
+    '    this.generateSuggestions();',
+    '  }',
+    '}',
+    '',
+    '💥 EXECUTION RESULT:',
+    '❌ Error thrown: 404_NOT_FOUND',
+    '🔄 Executing error handler...',
+    '✨ Generating helpful suggestions...',
+    '',
+    '🎯 Process completed successfully!'
+  ];
+
+  let currentLine = 0;
+  let currentChar = 0;
+
+  function typeWriter() {
+    if (currentLine < codeLines.length) {
+      const line = codeLines[currentLine];
+
+      if (currentChar < line.length) {
+        const span = document.createElement('span');
+        span.textContent = line[currentChar];
+
+        // Color coding
+        if (line.startsWith('$')) {
+          span.className = 'text-green-400';
+        } else if (line.includes('Error') || line.includes('❌') || line.includes('404')) {
+          span.className = 'text-red-400';
+        } else if (line.includes('class') || line.includes('constructor') || line.includes('function')) {
+          span.className = 'text-purple-400';
+        } else if (line.includes('console.log') || line.includes('throw')) {
+          span.className = 'text-orange-400';
+        } else if (line.includes('⚠️') || line.includes('🔍') || line.includes('📋')) {
+          span.className = 'text-yellow-400';
+        } else if (line.includes('✨') || line.includes('🎯') || line.includes('💥')) {
+          span.className = 'text-cyan-400 font-bold';
+        }
+
+        if (!terminalContent.lastElementChild || terminalContent.lastElementChild.tagName !== 'DIV' || terminalContent.lastElementChild.dataset.line !== currentLine.toString()) {
+          const lineDiv = document.createElement('div');
+          lineDiv.dataset.line = currentLine;
+          terminalContent.appendChild(lineDiv);
+        }
+
+        terminalContent.lastElementChild.appendChild(span);
+        currentChar++;
+
+        const speed = Math.random() * 30 + 20;
+        setTimeout(typeWriter, speed);
+
+      } else {
+        currentLine++;
+        currentChar = 0;
+        const br = document.createElement('br');
+        terminalContent.appendChild(br);
+        setTimeout(typeWriter, 100);
+      }
+    } else {
+      // Animation complete
+      cursor.style.display = 'none';
+      
+      // Show error popup first
+      setTimeout(() => {
+        errorPopup.classList.remove('hidden');
+        errorPopup.classList.add('flex');
+      }, 500);
+    }
+  }
+
+  // Event listeners
+  closePopup.addEventListener('click', () => {
+    errorPopup.classList.add('hidden');
+    errorPopup.classList.remove('flex');
+    
+    // Show output section after closing popup
+    setTimeout(() => {
+      outputSection.classList.remove('hidden');
+      outputSection.classList.add('animate-pulse');
+    }, 300);
+  });
+
+  startCoding.addEventListener('click', () => {
+    window.location.href = '{{ .Site.Home.RelPermalink }}';
+  });
+
+  // Close popup when clicking outside
+  errorPopup.addEventListener('click', (e) => {
+    if (e.target === errorPopup) {
+      closePopup.click();
+    }
+  });
+
+  // Start the animation
+  setTimeout(typeWriter, 500);
+</script>
+
+<style>
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(34, 211, 238, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(34, 211, 238, 0.8); }
+  }
+
+  .terminal-glow {
+    animation: glow 2s infinite;
+  }
+  
+  /* Custom scrollbar for terminal */
+  #terminal-content::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #terminal-content::-webkit-scrollbar-track {
+    background: rgba(30, 41, 59, 0.3);
+  }
+  
+  #terminal-content::-webkit-scrollbar-thumb {
+    background: rgba(34, 211, 238, 0.5);
+    border-radius: 4px;
+  }
+</style>
+{{ end }}
