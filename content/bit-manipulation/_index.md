@@ -1,6 +1,19 @@
 ---
 {
   "title": "Bit Manipulation",
+  "description": "Solve fundamental bit manipulation problems including counting set bits, finding non-repeating elements, bit flips, power of two checks, bit position identification, and performing arithmetic operations using bitwise techniques.",
+  "keywords": [
+    "bit manipulation",
+    "set bits",
+    "non-repeating elements",
+    "bit flips",
+    "power of two",
+    "bit position",
+    "copy bits",
+    "divide integers without division",
+    "square calculation without multiplication",
+    "power set"
+  ],
    date: 2025-05-19,
   lastmod: 2025-05-20,
   "problems": [

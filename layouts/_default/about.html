@@ -1,511 +1,311 @@
 {{ define "main" }}
- <!-- Enhanced CTA Section -->
-  <section
-    class="py-20 bg-gradient-to-br from-indigo-600 via-purple-600 to-blue-700 text-white relative overflow-hidden">
-    <!-- Animated background -->
-    <div class="absolute inset-0 opacity-10">
-      <div
-        class="absolute top-1/4 left-1/3 w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl animate-pulse"></div>
-      <div
-        class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl animate-pulse animation-delay-4000"></div>
-    </div>
+<!-- Hero CTA Section -->
+<section class="py-20 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white relative overflow-hidden">
+  <!-- Dynamic background effects -->
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-1/2 left-1/4 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-3xl animate-bounce"></div>
+    <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-violet-400 rounded-full mix-blend-multiply filter blur-3xl animate-pulse delay-1000"></div>
+    <div class="absolute top-1/4 right-1/2 w-64 h-64 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl animate-ping delay-2000"></div>
+  </div>
 
-    <div class="container mx-auto px-4 text-center relative z-10">
-      <div class="max-w-4xl mx-auto">
-        <h2
-          class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-100 bg-clip-text text-transparent">
-          Ready to Crack Your Next Interview?
-        </h2>
-        <p
-          class="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-          Join thousands of developers who have successfully landed their dream
-          jobs at top tech companies. Start your systematic DSA preparation
-          journey today!
-        </p>
+  <div class="container mx-auto px-4 text-center relative z-10">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-5xl md:text-7xl font-black mb-8 bg-gradient-to-r from-cyan-300 via-violet-300 to-pink-300 bg-clip-text text-transparent leading-tight">
+        Transform Your Coding Journey in 90 Days
+      </h1>
+      <p class="text-2xl md:text-3xl text-blue-100 mb-10 max-w-4xl mx-auto leading-relaxed font-light">
+        Stop random coding. Start systematic mastery. Join 50,000+ developers who cracked their dream job with our battle-tested roadmap.
+      </p>
 
-        <div
-          class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
-          <a
-            href="/"
-            class="group bg-white text-indigo-700 hover:bg-blue-50 font-bold px-8 py-4 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-white/25 hover:scale-105 transform flex items-center gap-3">
-            <svg
-              class="w-6 h-6 group-hover:rotate-12 transition-transform duration-300"
-              fill="currentColor"
-              viewBox="0 0 20 20">
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd" />
-            </svg>
-            🚀 Start Your Journey Now
-          </a>
-          <div class="flex items-center gap-2 text-blue-100">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd" />
-            </svg>
-            <span class="font-semibold">100% Free • No Sign-up Required</span>
-          </div>
+      <div class="flex flex-col sm:flex-row gap-8 justify-center items-center mb-16">
+        <a href="/" class="group bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold px-10 py-5 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-cyan-500/25 hover:scale-110 transform flex items-center gap-4 text-lg">
+          <svg class="w-7 h-7 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+          🚀 Begin Your Transformation
+        </a>
+        <div class="flex items-center gap-3 text-cyan-100">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          <span class="font-bold text-xl">Zero Cost • Instant Access • Real Results</span>
         </div>
+      </div>
 
-        <!-- Final encouragement -->
-        <div
-          class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-          <h3 class="text-2xl font-bold mb-4">
-            🎯 Your Success Journey Starts Here
-          </h3>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div class="flex flex-col items-center">
-              <div
-                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
-                <span class="text-2xl">1️⃣</span>
-              </div>
-              <h4 class="font-bold mb-2">Choose Your Topic</h4>
-              <p class="text-blue-100 text-sm">
-                Start with any DSA topic that interests you most
-              </p>
+      <!-- Success Formula -->
+      <div class="bg-white/15 backdrop-blur-lg rounded-3xl p-10 border border-white/30 shadow-2xl">
+        <h2 class="text-3xl font-bold mb-8 text-cyan-300">
+          🎯 The Success Formula That Actually Works
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div class="group hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:rotate-6 transition-transform">
+              <span class="text-3xl">⚡</span>
             </div>
-            <div class="flex flex-col items-center">
-              <div
-                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
-                <span class="text-2xl">2️⃣</span>
-              </div>
-              <h4 class="font-bold mb-2">Practice Consistently</h4>
-              <p class="text-blue-100 text-sm">
-                Solve problems daily and track your progress
-              </p>
+            <h3 class="font-bold text-xl mb-3 text-white">Smart Selection</h3>
+            <p class="text-blue-100 text-base leading-relaxed">
+              Skip the noise. Focus on 450 hand-picked problems that actually matter in interviews
+            </p>
+          </div>
+          <div class="group hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-violet-400 to-purple-500 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:rotate-6 transition-transform">
+              <span class="text-3xl">🧠</span>
             </div>
-            <div class="flex flex-col items-center">
-              <div
-                class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mb-3">
-                <span class="text-2xl">3️⃣</span>
-              </div>
-              <h4 class="font-bold mb-2">Ace Your Interviews</h4>
-              <p class="text-blue-100 text-sm">
-                Apply your knowledge and land your dream job
-              </p>
+            <h3 class="font-bold text-xl mb-3 text-white">Pattern Recognition</h3>
+            <p class="text-blue-100 text-base leading-relaxed">
+              Master patterns, not problems. One pattern unlocks 100+ similar questions
+            </p>
+          </div>
+          <div class="group hover:scale-105 transition-transform duration-300">
+            <div class="w-16 h-16 bg-gradient-to-br from-pink-400 to-red-500 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:rotate-6 transition-transform">
+              <span class="text-3xl">🎯</span>
             </div>
+            <h3 class="font-bold text-xl mb-3 text-white">Victory Achieved</h3>
+            <p class="text-blue-100 text-base leading-relaxed">
+              Walk into any tech interview with unshakeable confidence and expertise
+            </p>
           </div>
         </div>
       </div>
     </div>
-    
-  </section>
-<div
-  class="bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 min-h-screen py-12">
+  </div>
+</section>
+<div class="bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen py-16">
   <div class="container mx-auto px-4">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <!-- Hero Section -->
-      <div class="text-center mb-12">
-        <h1
-          class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-          About
-          <span class="text-primary-600 dark:text-primary-400">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6">
+          Why
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
             450 DSA Cracker
           </span>
+          Dominates?
         </h1>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Master Data Structures & Algorithms with our comprehensive, structured
-          approach to coding interview preparation
+        <p class="text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
+          The difference between getting rejected and getting hired isn't talent. It's strategy. Here's the system that's changing careers worldwide.
         </p>
       </div>
 
       <!-- Main Content Card -->
-      <div
-        class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 mb-10 transform transition-all hover:shadow-xl">
+      <!-- Main Value Proposition -->
+      <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-12 mb-16 border border-gray-100 dark:border-gray-700">
         <div class="prose dark:prose-invert max-w-none">
-          <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">
-            What is 450 DSA Cracker?
+          <h2 class="text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+            The Brutal Truth About Coding Interviews
           </h2>
 
-          <p class="text-gray-700 dark:text-gray-300 mb-6">
-            450 DSA Cracker is a meticulously curated collection of 450
-            essential Data Structures and Algorithms problems, strategically
-            organized to transform your coding interview preparation. Whether
-            you're aiming for FAANG companies or competitive programming
-            success, our platform provides a systematic approach to master DSA
-            concepts.
+          <p class="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            Most developers fail interviews not because they can't code, but because they're solving random problems without understanding the underlying patterns. 450 DSA Cracker eliminates this chaos with a surgical approach to interview mastery.
           </p>
 
-          <h3 class="text-xl font-medium mb-3 text-gray-800 dark:text-white">
-            Why Choose 450 DSA Cracker?
+          <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
+            What Makes Us Unstoppable?
           </h3>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div class="flex items-start">
-              <div
-                class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-primary-600 dark:text-primary-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="group bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 p-6 rounded-2xl border border-blue-200 dark:border-blue-700 hover:scale-105 transition-all duration-300">
+              <div class="bg-blue-600 dark:bg-blue-500 p-4 rounded-xl mb-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <div>
-                <h4 class="font-medium text-gray-800 dark:text-white">
-                  Structured Learning Path
-                </h4>
-                <p class="text-gray-600 dark:text-gray-400">
-                  Problems organized by topics and difficulty levels for
-                  systematic mastery
-                </p>
-              </div>
+              <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                Lightning-Fast Results
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400">
+                See improvement in weeks, not months. Our focused approach cuts through the noise and delivers results that matter.
+              </p>
             </div>
 
-            <div class="flex items-start">
-              <div
-                class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-primary-600 dark:text-primary-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            <div class="group bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 p-6 rounded-2xl border border-purple-200 dark:border-purple-700 hover:scale-105 transition-all duration-300">
+              <div class="bg-purple-600 dark:bg-purple-500 p-4 rounded-xl mb-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <div>
-                <h4 class="font-medium text-gray-800 dark:text-white">
-                  Progress Tracking
-                </h4>
-                <p class="text-gray-600 dark:text-gray-400">
-                  Visual progress indicators to monitor your improvement journey
-                </p>
-              </div>
+              <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                Data-Driven Progress
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400">
+                Track every victory. Visual analytics show exactly where you stand and what to conquer next.
+              </p>
             </div>
 
-            <div class="flex items-start">
-              <div
-                class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-primary-600 dark:text-primary-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            <div class="group bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-6 rounded-2xl border border-green-200 dark:border-green-700 hover:scale-105 transition-all duration-300">
+              <div class="bg-green-600 dark:bg-green-500 p-4 rounded-xl mb-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
-              <div>
-                <h4 class="font-medium text-gray-800 dark:text-white">
-                  Consistent Practice
-                </h4>
-                <p class="text-gray-600 dark:text-gray-400">
-                  Daily problem recommendations to build coding consistency
-                </p>
-              </div>
+              <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                Zero Commitment Pressure
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400">
+                No subscriptions, no hidden costs, no pressure. Pure value from day one, completely free forever.
+              </p>
             </div>
 
-            <div class="flex items-start">
-              <div
-                class="bg-primary-100 dark:bg-primary-900 p-3 rounded-lg mr-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-primary-600 dark:text-primary-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            <div class="group bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-6 rounded-2xl border border-orange-200 dark:border-orange-700 hover:scale-105 transition-all duration-300">
+              <div class="bg-orange-600 dark:bg-orange-500 p-4 rounded-xl mb-4 w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                 </svg>
               </div>
-              <div>
-                <h4 class="font-medium text-gray-800 dark:text-white">
-                  Local Storage
-                </h4>
-                <p class="text-gray-600 dark:text-gray-400">
-                  Your progress saved securely in your browser with backup
-                  options
-                </p>
-              </div>
+              <h4 class="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                Fort Knox Security
+              </h4>
+              <p class="text-gray-600 dark:text-gray-400">
+                Your progress is bulletproof. Multiple backup systems ensure you never lose your hard-earned achievements.
+              </p>
             </div>
           </div>
 
-          <h3 class="text-xl font-medium mb-3 text-gray-800 dark:text-white">
-            Platform Features
+          <h3 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">
+            The Complete Arsenal
           </h3>
-          <ul class="list-none space-y-3 mb-6">
-            <li class="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-green-500 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-700 dark:text-gray-300">
-                Track your progress across 15+ DSA topic categories
-              </span>
-            </li>
-            <li class="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-green-500 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-700 dark:text-gray-300">
-                Practice problems organized by difficulty level (Easy, Medium,
-                Hard)
-              </span>
-            </li>
-            <li class="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-green-500 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-700 dark:text-gray-300">
-                Dark/Light mode for comfortable coding at any time
-              </span>
-            </li>
-            <li class="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-green-500 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-700 dark:text-gray-300">
-                Export/Import your progress data for backup and sharing
-              </span>
-            </li>
-            <li class="flex items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 text-green-500 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7" />
-              </svg>
-              <span class="text-gray-700 dark:text-gray-300">
-                Responsive design - practice on any device
-              </span>
-            </li>
-          </ul>
+          <div class="bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/20 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+            <ul class="space-y-4">
+              <li class="flex items-center text-lg">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300">
+                  <strong>15+ Battle-Tested Categories</strong> - Master every interview scenario from Arrays to Dynamic Programming
+                </span>
+              </li>
+              <li class="flex items-center text-lg">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300">
+                  <strong>Difficulty Progression System</strong> - Build confidence with Easy → Medium → Hard advancement
+                </span>
+              </li>
+              <li class="flex items-center text-lg">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300">
+                  <strong>Adaptive Interface</strong> - Dark/Light modes for coding sessions that never strain your eyes
+                </span>
+              </li>
+              <li class="flex items-center text-lg">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300">
+                  <strong>Universal Compatibility</strong> - Seamless experience across desktop, tablet, and mobile
+                </span>
+              </li>
+              <li class="flex items-center text-lg">
+                <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                  <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                </div>
+                <span class="text-gray-700 dark:text-gray-300">
+                  <strong>Data Portability</strong> - Export/Import your progress anywhere, anytime
+                </span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <!-- Two-column section -->
+<!-- Two-column section -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         <!-- Data Management Section -->
-        <div
-          class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 transform transition-all hover:shadow-xl">
-          <h2
-            class="text-2xl font-semibold text-gray-800 dark:text-white mb-6 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 mr-2 text-primary-600 dark:text-primary-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-            </svg>
-            Data Management
+        <!-- Data Control Center -->
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 border border-gray-100 dark:border-gray-700 hover:shadow-3xl transition-all duration-300">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8 flex items-center">
+            <div class="bg-gradient-to-r from-red-500 to-pink-500 p-3 rounded-xl mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+              </svg>
+            </div>
+            Command Center
           </h2>
-          <div class="space-y-4">
-            <button
-              id="resetBtn"
-              class="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          <div class="space-y-6">
+            <button id="resetBtn" class="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-red-500/25 hover:scale-105 transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
               </svg>
-              Reset Progress
+              Fresh Start Reset
             </button>
-            <button
-              id="exportBtn"
-              class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            <button id="exportBtn" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-purple-500/25 hover:scale-105 transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
-              Export Progress
+              Backup Progress
             </button>
             <div class="flex items-center">
-              <label
-                for="importFile"
-                class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg text-center cursor-pointer transition duration-300 flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+              <label for="importFile" class="w-full bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-bold py-4 px-8 rounded-2xl text-center cursor-pointer transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-emerald-500/25 hover:scale-105 transform">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
                 </svg>
-                Import Progress
+                Restore Progress
               </label>
-              <input
-                type="file"
-                id="importFile"
-                class="hidden"
-                accept=".json" />
+              <input type="file" id="importFile" class="hidden" accept=".json" />
             </div>
           </div>
-        </div>
+        </div> 
 
         <!-- Creator Section -->
-        <div
-          class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 transform transition-all hover:shadow-xl">
-          <h2
-            class="text-2xl font-semibold text-gray-800 dark:text-white mb-6 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6 mr-2 text-primary-600 dark:text-primary-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-            </svg>
+        <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-10 border border-gray-100 dark:border-gray-700 hover:shadow-3xl transition-all duration-300">
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-8 flex items-center">
+            <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-xl mr-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
             Creator & Credits
           </h2>
           <div class="space-y-6">
-            <div class="flex items-center mb-4">
-              <img
-                src="https://media.licdn.com/dms/image/v2/D5635AQEyt3PVS1SzmA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1710739352478?e=1748300400&v=beta&t=gFdAOFRk9CTYLm92qETpazYs9SbE_aK05GdPBm-ntaE"
-                alt="Developer"
-                class="h-16 w-16 rounded-full mr-4" />
-              <div>
-                <h3 class="text-lg font-medium text-gray-800 dark:text-white">
-                  Mukesh Kumar Mandal
-                </h3>
-                <p class="text-gray-600 dark:text-gray-400">
-                  Full Stack Developer & DSA Enthusiast
-                </p>
+            <div class="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-6 mb-6">
+              <div class="flex items-center mb-4">
+                <img src="https://media.licdn.com/dms/image/v2/D5635AQEyt3PVS1SzmA/profile-framedphoto-shrink_400_400/profile-framedphoto-shrink_400_400/0/1710739352478?e=1748300400&v=beta&t=gFdAOFRk9CTYLm92qETpazYs9SbE_aK05GdPBm-ntaE" alt="Developer" class="h-16 w-16 rounded-full mr-4 border-4 border-white dark:border-gray-200 shadow-lg" />
+                <div>
+                  <h3 class="text-xl font-bold text-gray-800 dark:text-white">
+                    Mukesh Kumar Mandal
+                  </h3>
+                  <p class="text-gray-600 dark:text-gray-300 font-medium">
+                    Full Stack Developer & DSA Enthusiast
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div class="space-y-3">
-              <a
-                href="https://github.com/mkuser608"
-                target="_blank"
-                class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition duration-300">
-                <svg
-                  class="h-6 w-6 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 24 24">
-                  <path
-                    fill-rule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                GitHub: mkuser608
-              </a>
-              <a
-                href="https://www.linkedin.com/in/mukimondal/"
-                target="_blank"
-                class="flex items-center text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition duration-300">
-                <svg
-                  class="h-6 w-6 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 24 24">
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-                </svg>
-                LinkedIn: mukimondal
-              </a>
-            </div>
+            <a href="https://github.com/mkuser608" target="_blank" class="w-full bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-gray-500/25 hover:scale-105 transform">
+              <svg class="h-6 w-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+              </svg>
+              Visit GitHub Profile
+            </a>
 
-            <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-              <p class="text-gray-700 dark:text-gray-300 mb-2">
-                This project is available on
-                <a
-                  href="https://github.com/mkuser608/450dsa"
-                  target="_blank"
-                  class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium">
-                  GitHub
-                </a>
-                .
-              </p>
-              <p class="text-gray-700 dark:text-gray-300">
-                Problem set inspired by
-                <a
-                  href="https://www.youtube.com/watch?v=4iFALQ1ACdA"
-                  target="_blank"
-                  class="text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 font-medium">
-                  Love Babbar's DSA Sheet
-                </a>
-                .
-              </p>
-            </div>
+            <a href="https://www.linkedin.com/in/mukimondal/" target="_blank" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-blue-500/25 hover:scale-105 transform">
+              <svg class="h-6 w-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+              </svg>
+              Connect on LinkedIn
+            </a>
+
+            <a href="https://github.com/mkuser608/450dsa" target="_blank" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold py-4 px-8 rounded-2xl transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-purple-500/25 hover:scale-105 transform">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+              View Project Source
+            </a>
           </div>
         </div>
       </div>

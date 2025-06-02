@@ -1,6 +1,21 @@
 ---
 {
   "title": "Stacks & Queues",
+  "description": "This section includes 38 diverse problems focused on Stacks and Queues data structures.  
+  It covers fundamental implementations such as building stacks and queues from scratch,  
+  advanced variations like multiple stacks or queues in a single array, and practical challenges  
+  including balanced parentheses, expression evaluation, next greater/smaller elements, and  
+  queue/stack conversions. It also explores real-world applications such as LRU cache design,  
+  circular tours, and sliding window problems, offering a comprehensive practice set for mastering  
+  stack and queue concepts.",
+"keywords": [
+  "Stacks", "Queues", "Stack Implementation", "Queue Implementation", "Balanced Parentheses",
+  "Expression Evaluation", "Next Greater Element", "Next Smaller Element", "LRU Cache",
+  "Circular Queue", "Stack Permutations", "Recursion", "Data Structures", "Queue using Stacks",
+  "Stack using Queues", "Multiple Stacks in Array", "Sliding Window", "Histogram Problems",
+  "Parentheses Checker", "Queue Reversal", "Circular Tour", "Rotting Oranges", "Queue-based Stream Processing",
+  "Algorithm Challenges"
+],
    date: 2025-05-19,
   lastmod: 2025-05-20,
   "problems": [

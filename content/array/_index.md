@@ -1,8 +1,14 @@
 ---
 {
   "title": "Array",
-  date: 2025-05-19,
-  lastmod: 2025-05-20,
+  "description": "Master a wide variety of array-based problems including subarrays, sorting, searching, rearrangement, and advanced algorithms like Kadane’s and two-pointer techniques.",
+  "keywords": [
+    "array problems", "subarray", "sorting", "searching", "kadane's algorithm", "next permutation",
+    "array rearrangement", "sliding window", "prefix sum", "trapping rain water", "merge intervals",
+    "two-pointer technique", "array rotations", "duplicate elements", "intersection and union"
+  ],
+  "date": 2025-05-19,
+  "lastmod": 2025-05-20,
   "problems": [
     {
       "title": "Reverse the array",

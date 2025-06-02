@@ -1,6 +1,29 @@
 ---
 {
   "title": "Heap",
+  "description": "This section covers fundamental and advanced problems related to heap data structures, including implementation of max and min heaps, heap sort, finding kth largest or smallest elements, merging k sorted arrays or linked lists, sliding window maximum, median in a data stream, heap property validation, and various transformations like converting BST to heap and min heap to max heap. It also includes optimization problems like connecting ropes with minimum cost and rearranging characters to avoid adjacency. These problems emphasize efficient priority-based data management and optimization techniques.",
+  "keywords": [
+    "heap implementation",
+    "max heap",
+    "min heap",
+    "heap sort",
+    "kth largest element",
+    "kth smallest element",
+    "merge k sorted arrays",
+    "merge k sorted linked lists",
+    "sliding window maximum",
+    "median in stream",
+    "binary tree heap check",
+    "minimum cost ropes",
+    "BST to min heap",
+    "min heap to max heap",
+    "rearrange characters",
+    "priority queue",
+    "heap data structure",
+    "optimization",
+    "efficient sorting",
+    "data stream median"
+  ],
    date: 2025-05-19,
   lastmod: 2025-05-20,
   "problems": [

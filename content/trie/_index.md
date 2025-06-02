@@ -1,8 +1,10 @@
 ---
 {
   "title": "Trie",
-   date: 2025-05-19,
-  lastmod: 2025-05-20,
+  "description": "Explore important problems involving the Trie data structure including prefix search, word break, phone directory, and more.",
+  "keywords": ["trie", "prefix tree", "data structures", "word search", "unique prefix", "phone directory", "anagrams", "boolean matrix"],
+  "date": 2025-05-19,
+  "lastmod": 2025-05-20,
   "problems": [
     {
       "title": "Construct a trie from scratch",

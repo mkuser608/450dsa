@@ -1,8 +1,18 @@
 ---
 {
   "title": "BackTracking",
-   date: 2025-05-19,
-  lastmod: 2025-05-20,
+  "description": "Explore key backtracking problems and solutions to build a strong foundation in DSA for coding interviews.",
+  "keywords": [
+    "450dsa",
+    "backtracking",
+    "DSA questions",
+    "interview preparation",
+    "coding problems",
+    "recursion",
+    "algorithm practice"
+  ],
+  "date": "2025-06-02",
+  "lastmod": "2025-06-02",
   "problems": [
     {
       "title": "Rat in a maze Problem",

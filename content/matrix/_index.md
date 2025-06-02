@@ -1,6 +1,20 @@
 ---
 {
   "title": "Matrix",
+  "description": "This section covers fundamental and advanced problems related to matrices, including traversal techniques like spiral traversal, efficient searching of elements in sorted matrices, and finding medians in row-wise sorted matrices. It also includes problems on identifying rows with maximum 1s, printing elements in sorted order from a row-column sorted matrix, and finding maximum size rectangles of 1s. Additional challenges involve locating specific pairs in matrices, rotating matrices by 90 degrees without extra space, finding the kth smallest element in sorted matrices, and identifying common elements across all rows. These problems focus on matrix manipulation, searching, sorting, and optimization techniques.",
+  "keywords": [
+    "matrix",
+    "spiral traversal",
+    "search element in matrix",
+    "median in sorted matrix",
+    "row with maximum 1s",
+    "sorted matrix elements",
+    "maximum size rectangle",
+    "find pair in matrix",
+    "rotate matrix 90 degrees",
+    "kth smallest element",
+    "common elements in matrix rows"
+  ],
    date: 2025-05-19,
   lastmod: 2025-05-20,
   "problems": [

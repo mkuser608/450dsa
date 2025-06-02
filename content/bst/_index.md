@@ -1,8 +1,32 @@
 ---
 {
   "title": "Binary Search Trees",
+  "description": "This section covers key problems on Binary Search Trees (BST) including search, insertion, deletion, traversal, construction from traversals, balancing, finding order statistics, merging BSTs, and specialized queries like finding LCA, median, and checking BST properties.",
+  "keywords": [
+    "binary search tree",
+    "BST search",
+    "BST insertion",
+    "BST deletion",
+    "inorder successor",
+    "inorder predecessor",
+    "lowest common ancestor",
+    "BST construction",
+    "balanced BST",
+    "merge BST",
+    "kth largest element",
+    "kth smallest element",
+    "count nodes in range",
+    "flatten BST",
+    "check BST validity",
+    "largest BST in binary tree",
+    "dead end in BST",
+    "appointment conflicts",
+    "replace with least greater element",
+    "BST median",
+    "count pairs sum in BST"
+  ],
    date: 2025-05-19,
-  lastmod: 2025-05-20,
+  lastmod: 2025-05-26,
   "problems": [
     {
       "title": "Fina a value in a BST",

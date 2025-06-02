@@ -1,8 +1,30 @@
 ---
 {
   "title": "Binary Trees",
+  "description": "Explore essential problems on binary trees including traversals, tree construction, view problems, balance checks, and advanced tree algorithms. Master fundamental techniques like level order, inorder, preorder, postorder, and various view traversals along with complex problems on sum trees, duplicate subtrees, and tree isomorphism.",
+  "keywords": [
+    "binary tree",
+    "tree traversal",
+    "level order traversal",
+    "inorder traversal",
+    "preorder traversal",
+    "postorder traversal",
+    "tree construction",
+    "tree views",
+    "balanced tree",
+    "diameter of tree",
+    "mirror tree",
+    "sum tree",
+    "duplicate subtrees",
+    "tree isomorphism",
+    "lowest common ancestor",
+    "zigzag traversal",
+    "boundary traversal",
+    "kth ancestor",
+    "longest path sum"
+  ],
    date: 2025-05-19,
-  lastmod: 2025-05-20,
+  lastmod: 2025-05-25,
   "problems": [
     {
       "title": "level order traversal",

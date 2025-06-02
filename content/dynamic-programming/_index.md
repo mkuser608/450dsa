@@ -1,8 +1,35 @@
 ---
 {
   "title": "Dynamic Programming",
+  "description": "This section covers key problems on Dynamic Programming (DP) including classic challenges like Coin Change, Knapsack, Longest Common Subsequence, Matrix Chain Multiplication, Edit Distance, and many others. It focuses on various DP techniques such as memoization, tabulation, and optimization strategies to solve problems related to sequences, subsets, partitions, and combinatorial games.",
+  "keywords": [
+    "dynamic programming",
+    "DP problems",
+    "coin change",
+    "knapsack",
+    "longest common subsequence",
+    "matrix chain multiplication",
+    "edit distance",
+    "subset sum",
+    "egg dropping",
+    "catalan numbers",
+    "palindromic subsequence",
+    "boolean parenthesization",
+    "word break problem",
+    "longest increasing subsequence",
+    "weighted job scheduling",
+    "optimal binary search tree",
+    "memoization",
+    "tabulation",
+    "sequence problems",
+    "combinatorial problems",
+    "game theory DP",
+    "DP optimization",
+    "coding interview",
+    "competitive programming"
+  ],
    date: 2025-05-19,
-  lastmod: 2025-05-20,
+  lastmod: 2025-05-26,
   "problems": [
     {
       "title": "Coin ChangeProblem",

@@ -1,19 +1,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ if .Title }}{{ .Title }} | {{ end }}DSA 450 Cracker - Master 450+ Data Structures & Algorithms Problems</title>
-<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}Master DSA 450 problems with curated solutions. Company-specific question lists, progress tracking, and expert tips to crack coding interviews. Start your preparation today!{{ end }}">
+<title>{{ if .Title }}{{ .Title }} | {{ end }}DSA 450 Cracker Data Structures and Algorithms - Bytezone</title>
+<meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}Sharpen your coding skills with our DSA 450 challenge set. Get guided solutions, track your learning, and prepare effectively for software engineering interviews.{{ end }}">
 
 <!-- SEO Meta Tags -->
-<meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}DSA 450 Cracker - Complete Interview Preparation Guide">
-<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}Comprehensive roadmap to solve 450 essential DSA problems. Includes LeetCode solutions, time complexity analysis, and interview success strategies.{{ end }}">
+<meta property="og:title" content="{{ if .Title }}{{ .Title }} | {{ end }}DSA 450 Cracker – Structured Coding Interview Prep">
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}Master essential algorithmic challenges with a carefully crafted set of 450 problems. Includes practical solutions, complexity breakdowns, and curated practice paths.{{ end }}">
+<meta name="keywords" content="{{ with .Params.keywords }}{{ delimit . ", " }}{{ else }}DSA 450, coding practice, interview preparation, data structures, algorithm mastery, problem-solving, tech interviews, SDE preparation, FAANG prep, software roles{{ end }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:image" content="{{ .Site.BaseURL }}images/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{{ .Site.BaseURL }}images/android-chrome-512x512.png">
-
-
 
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="icon" href="/images/favicon.ico">
@@ -41,7 +40,7 @@
 
   
   <!-- Alpine.js from CDN - Load before any custom scripts -->
-  <script src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js" defer></script>
+  <!-- <script src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js" defer></script> -->
   
   <!-- Custom CSS for bluish theme -->
   <style>
@@ -198,13 +197,13 @@
     }
   </style>
   
-  <!-- Firebase from CDN - Load after Alpine.js but before custom scripts -->
+  <!-- Firebase from CDN - Load after Alpine.js but before custom scripts
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script> -->
   
   <!-- Initialize Alpine stores before loading custom auth script -->
-  <script>
+  <!-- <script>
     document.addEventListener('alpine:init', () => {
       // Initialize status store
       Alpine.store('status', {
@@ -263,7 +262,7 @@
       
       console.log('Alpine stores initialized');
     });
-  </script>
+  </script> -->
   
   <!-- Custom Auth Script - Loaded after Alpine.js and Firebase -->
   <!-- <script src="/js/auth-config.js" defer></script> -->
